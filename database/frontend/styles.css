@@ -1,0 +1,27 @@
+body {
+    text-align: center;
+}
+
+main {
+    display: inline-block;
+    position: relative;
+}
+
+.board {
+    margin: 0 auto;
+    background: #555555;
+}
+
+td.cell {
+    background: rgb(128, 216, 154);
+    width: 46px;
+    height: 46px;
+    margin: 2px;
+}
+
+.cell div {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    margin: 0 auto;
+}

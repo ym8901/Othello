@@ -1,57 +1,66 @@
-*, *::before, *::after {
+*,
+*::before,
+*::after {
     box-sizing: border-box;
-  }
-  
-  html, body {
+}
+
+html,
+body {
     text-align: center;
     margin: 0;
-    background-color: #008000;
-  }
-  
-  .stage {
+    background-color: #ffffff;
+}
+
+.stage {
     display: flex;
     flex-wrap: wrap;
-    margin: 60px;
+    text-align: center;
+    vertical-align: middle;
+    position: fixed;
     width: 404px;
     height: 404px;
-  }
-  
-  .square {
+    top: calc(50% - 404px/2);
+    left: calc(50% - 404px/2);
+}
+
+.square {
     position: relative;
     width: 50px;
     height: 50px;
     border: solid black;
-    border-width: 0 4px 4px 0;
-    cursor: pointer;;
-  }
-  
-  .square:nth-child(-n + 8) {
-    border-width: 4px 4px 4px 0;
+    border-width: 0 1px 1px 0;
+    cursor: pointer;
+    background-color: rgb(128, 216, 154);
+    ;
+}
+
+.square:nth-child(-n + 8) {
+    border-width: 1px 1px 1px 0;
     height: 54px;
-  }
-  
-  .square:nth-child(8n + 1) {
-    border-width: 0 4px 4px 4px;
+}
+
+.square:nth-child(8n + 1) {
+    border-width: 0 1px 1px 1px;
     width: 54px;
-  }
-  
-  .square:first-child {
-    border-width: 4px;
+}
+
+.square:first-child {
+    border-width: 1px;
     width: 54px;
     height: 54px;
-  }
-  
-  .stone {
+}
+
+.stone {
     position: absolute;
-    top: 2px;
+    top: 4px;
     bottom: 0;
-    left: 2px;
+    left: 4px;
     width: 42px;
     height: 42px;
     border-radius: 21px;
     background-color: black;
-  }
-  
-  #square-template {
+}
+
+#square-template {
     display: none;
-  } 
+}

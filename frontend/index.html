@@ -11,61 +11,88 @@
     <main>
         <div id="mode">
             <h3>Othelo</h3>
-            <p>黒のプレイヤーを設定してください</p>
-            <ul>
-                <li>
-                    <input type="radio" id="f-option" name="selector" checked>
-                    <label for="f-option">人間</label>
+            <div id="nextline">
+                <p>黒のプレイヤーを設定してください</p>
+                <ul>
+                    <li>
+                        <input type="radio" id="f-option" name="selector" checked>
+                        <label for="f-option">人間</label>
 
-                    <div class="check"></div>
-                </li>
+                        <div class="check"></div>
+                    </li>
 
-                <li>
-                    <input type="radio" id="s-option" name="selector">
-                    <label for="s-option">ランダム</label>
+                    <li>
+                        <input type="radio" id="s-option" name="selector">
+                        <label for="s-option">ランダム</label>
 
-                    <div class="check">
-                        <div class="inside"></div>
-                    </div>
-                </li>
+                        <div class="check">
+                            <div class="inside"></div>
+                        </div>
+                    </li>
 
-                <li>
-                    <input type="radio" id="t-option" name="selector">
-                    <label for="t-option">AI</label>
+                    <li>
+                        <input type="radio" id="t-option" name="selector">
+                        <label for="t-option">AI</label>
 
-                    <div class="check">
-                        <div class="inside"></div>
-                    </div>
-                </li>
-            </ul>
+                        <div class="check">
+                            <div class="inside"></div>
+                        </div>
+                    </li>
+                </ul>
 
-            <p>白のプレイヤーを設定してください</p>
-            <ul>
-                <li>
-                    <input type="radio" id="f-option" name="selector" checked>
-                    <label for="f-option">人間</label>
+                <p>白のプレイヤーを設定してください</p>
+                <ul>
+                    <li>
+                        <input type="radio" id="f-option" name="selector" checked>
+                        <label for="f-option">人間</label>
 
-                    <div class="check"></div>
-                </li>
+                        <div class="check"></div>
+                    </li>
 
-                <li>
-                    <input type="radio" id="s-option" name="selector">
-                    <label for="s-option">ランダム</label>
+                    <li>
+                        <input type="radio" id="s-option" name="selector">
+                        <label for="s-option">ランダム</label>
 
-                    <div class="check">
-                        <div class="inside"></div>
-                    </div>
-                </li>
+                        <div class="check">
+                            <div class="inside"></div>
+                        </div>
+                    </li>
 
-                <li>
-                    <input type="radio" id="t-option" name="selector">
-                    <label for="t-option">AI</label>
+                    <li>
+                        <input type="radio" id="t-option" name="selector">
+                        <label for="t-option">AI</label>
 
-                    <div class="check">
-                        <div class="inside"></div>
-                    </div>
-                </li>
-            </ul>
+                        <div class="check">
+                            <div class="inside"></div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div id="nextline">
+                <p>実行モードを選択してください</p>
+                <ul>
+                    <li>
+                        <input type="radio" id="f-option" name="selector" checked>
+                        <label for="f-option">通常</label>
+
+                        <div class="check"></div>
+                    </li>
+
+                    <li>
+                        <input type="radio" id="s-option" name="selector">
+                        <label for="s-option">高速化</label>
+
+                        <div class="check">
+                            <div class="inside"></div>
+                        </div>
+                        <p class="none">実験回数：<br>
+                            <input type="text" name="name" size="5">回</p>
+                        
+                    </li>
+                </ul>
+
+                
+            </div>
             <div id="menu">
                 <p id="normal" class="select">無印版</p>
                 <p id="advance" class="select">DLC</p>

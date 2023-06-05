@@ -15,17 +15,19 @@ main {
     height: 100%;
     background: rgba(31, 19, 19, 0.8);
     color: white;
+    text-align: center;
 }
 
 #menu {
     display: flex;
     justify-content: space-evenly;
-    margin-top: 200px;
+    margin-top: 10px;
 }
 
 h3,
 p {
     color: #AAAAAA;
+    font-size: 17px;
 }
 
 #menu p {
@@ -57,9 +59,20 @@ td.cell {
     margin: 4px;
 }
 
+#nextline{
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 10px;
+}
+
 .cell div {
     width: 70px;
     height: 70px;
     border-radius: 50%;
     margin: 0 auto;
 }
+
+.none{
+    margin-top: 0px;
+}
+

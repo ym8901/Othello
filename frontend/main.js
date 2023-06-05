@@ -3,10 +3,14 @@ const BLACK = 1,
 let data = [];
 
 const board = document.getElementById("board");
+const h2 = document.querySelector("h2");
+const counter = document.getElementById("counter");
+
 let board_size = 6; //盤面のサイズ
 
 // 初期化
 function init() {
+  board.innerHTML = "";
   for (let i = 0; i < board_size; i++) {
     const tr = document.createElement("tr");
     data[i] = Array(board_size).fill(0);
@@ -20,8 +24,6 @@ function init() {
     board.appendChild(tr);
   }
 }
-
-init();
 
 window.onload = () => {
   init();

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Othello Game</title>
+    <link rel="stylesheet" type="text/css" href="./css/styles.css"> <!-- CSSファイルの読み込み -->
+    <link rel="stylesheet" type="text/css" href="./css/radiobutton.css" />
+</head>
+
+<body>
+    <main>
+        <div id="mode">
+            <h3>Othelo</h3>
+            <p>黒のプレイヤーを設定してください</p>
+            <ul>
+                <li>
+                    <input type="radio" id="f-option" name="selector" checked>
+                    <label for="f-option">人間</label>
+
+                    <div class="check"></div>
+                </li>
+
+                <li>
+                    <input type="radio" id="s-option" name="selector">
+                    <label for="s-option">ランダム</label>
+
+                    <div class="check">
+                        <div class="inside"></div>
+                    </div>
+                </li>
+
+                <li>
+                    <input type="radio" id="t-option" name="selector">
+                    <label for="t-option">AI</label>
+
+                    <div class="check">
+                        <div class="inside"></div>
+                    </div>
+                </li>
+            </ul>
+
+            <p>白のプレイヤーを設定してください</p>
+            <ul>
+                <li>
+                    <input type="radio" id="f-option" name="selector" checked>
+                    <label for="f-option">人間</label>
+
+                    <div class="check"></div>
+                </li>
+
+                <li>
+                    <input type="radio" id="s-option" name="selector">
+                    <label for="s-option">ランダム</label>
+
+                    <div class="check">
+                        <div class="inside"></div>
+                    </div>
+                </li>
+
+                <li>
+                    <input type="radio" id="t-option" name="selector">
+                    <label for="t-option">AI</label>
+
+                    <div class="check">
+                        <div class="inside"></div>
+                    </div>
+                </li>
+            </ul>
+            <div id="menu">
+                <p id="normal" class="select">無印版</p>
+                <p id="advance" class="select">DLC</p>
+            </div>
+        </div>
+        <div id="contents">
+            <table id="board"></table>
+        </div>
+        <div id="counter" class="hide">
+            <div id="numBlack"></div>
+            <h2></h2>
+            <div id="numWhite"></div>
+        </div>
+    </main>
+    <script src="main.js"></script> <!-- JavaScriptファイルの読み込み -->
+</body>
+
+</html>

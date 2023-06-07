@@ -10,17 +10,12 @@ document
   .forEach((value) => {
     value.addEventListener(`change`, setDisabled);
   });
-document.querySelectorAll(".select").forEach((value) => {
-  value.addEventListener("click", start);
-});
 
 // 特定のラジオボタンが選択された時、一部のラジオボタンとテキストボックスを無効化する
-function setDisabled(e) {
+function setDisabled() {
   var isAnyChecked = false;
-  var radioGroups = document.querySelectorAll(
-    '[id="b-h-option"],[id="w-h-option"]'
-  );
-  var targetElement = document.getElementById("menu");
+  var radioGroups = document.querySelectorAll('[id="b-h-option"],[id="w-h-option"]')
+  var targetElement = document.getElementById("exmode");
 
   radioGroups.forEach(function (radio) {
     if (radio.checked) {
@@ -28,10 +23,12 @@ function setDisabled(e) {
     }
   });
 
+  document.getElementById("n-option").checked = true;
+
   if (isAnyChecked) {
-    targetElement.classList.add("disabled");
+    targetElement.classList.add('disabled');
   } else {
-    targetElement.classList.remove("disabled");
+    targetElement.classList.remove('disabled');
   }
 }
 

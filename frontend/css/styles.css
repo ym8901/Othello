@@ -72,10 +72,6 @@ td.cell {
     margin: 0 auto;
 }
 
-.none{
-    margin-top: 0px;
-}
-
 .disabled {
     pointer-events:none; 
     opacity:0.6;         

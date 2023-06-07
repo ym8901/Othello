@@ -33,7 +33,7 @@ p {
 #menu p {
     width: 140px;
     font-size: 24px;
-    padding: 6px 3px 3px; 
+    padding: 6px 3px 3px;
     margin: 15px;
     border: solid 1px #AAAAAA;
     border-radius: 5px;
@@ -59,7 +59,7 @@ td.cell {
     margin: 4px;
 }
 
-#nextline{
+#nextline {
     display: inline-block;
     vertical-align: top;
     margin-left: 10px;
@@ -72,7 +72,15 @@ td.cell {
     margin: 0 auto;
 }
 
-.none{
+.none {
     margin-top: 0px;
 }
 
+.disabled {
+    pointer-events: none;
+    opacity: 0.6;
+}
+
+.hide {
+    display: none;
+}

@@ -15,15 +15,15 @@
                 <p>黒のプレイヤーを設定してください</p>
                 <ul>
                     <li>
-                        <input type="radio" id="f-option" name="selector" checked>
-                        <label for="f-option">人間</label>
+                        <input type="radio" id="b-h-option" name="b-selector" checked>
+                        <label for="b-h-option">人間</label>
 
                         <div class="check"></div>
                     </li>
 
                     <li>
-                        <input type="radio" id="s-option" name="selector">
-                        <label for="s-option">ランダム</label>
+                        <input type="radio" id="b-r-option" name="b-selector">
+                        <label for="b-r-option">ランダム</label>
 
                         <div class="check">
                             <div class="inside"></div>
@@ -31,8 +31,8 @@
                     </li>
 
                     <li>
-                        <input type="radio" id="t-option" name="selector">
-                        <label for="t-option">AI</label>
+                        <input type="radio" id="b-a-option" name="b-selector">
+                        <label for="b-a-option">AI</label>
 
                         <div class="check">
                             <div class="inside"></div>
@@ -43,15 +43,15 @@
                 <p>白のプレイヤーを設定してください</p>
                 <ul>
                     <li>
-                        <input type="radio" id="f-option" name="selector" checked>
-                        <label for="f-option">人間</label>
+                        <input type="radio" id="w-h-option" name="w-selector" checked>
+                        <label for="w-h-option">人間</label>
 
                         <div class="check"></div>
                     </li>
 
                     <li>
-                        <input type="radio" id="s-option" name="selector">
-                        <label for="s-option">ランダム</label>
+                        <input type="radio" id="w-r-option" name="w-selector">
+                        <label for="w-r-option">ランダム</label>
 
                         <div class="check">
                             <div class="inside"></div>
@@ -59,8 +59,8 @@
                     </li>
 
                     <li>
-                        <input type="radio" id="t-option" name="selector">
-                        <label for="t-option">AI</label>
+                        <input type="radio" id="w-a-option" name="w-selector">
+                        <label for="w-a-option">AI</label>
 
                         <div class="check">
                             <div class="inside"></div>
@@ -72,26 +72,25 @@
                 <p>実行モードを選択してください</p>
                 <ul>
                     <li>
-                        <input type="radio" id="f-option" name="selector" checked>
-                        <label for="f-option">通常</label>
-
+                        <input type="radio" id="n-option" name="s-selector" checked>
+                        <label for="n-option">通常</label>
                         <div class="check"></div>
                     </li>
 
-                    <li>
-                        <input type="radio" id="s-option" name="selector">
-                        <label for="s-option">高速化</label>
+                    <li id="exmode">
+                        <input type="radio" id="f-option" name="s-selector">
+                        <label for="f-option">高速化</label>
 
                         <div class="check">
                             <div class="inside"></div>
                         </div>
                         <p class="none">実験回数：<br>
-                            <input type="text" name="name" size="5">回</p>
-                        
+                            <input type="text" name="num" size="5">回
+                        </p>
                     </li>
                 </ul>
 
-                
+
             </div>
             <div id="menu">
                 <p id="normal" class="select">無印版</p>

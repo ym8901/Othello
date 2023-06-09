@@ -5,15 +5,19 @@ let data = [];
 let move = {
   x: 3,
   y: 4,
+  value: 100,
 };
 let movenum;
 let selectmode = [0, 0];
+let board_size = 6; //盤面のサイズ
+let value = 1; //石のポイント
 
 let jsonData;
 const board = document.getElementById("board");
 const h2 = document.querySelector("h2");
 const counter = document.getElementById("counter");
 const mode = document.getElementById("mode");
+const exenum = document.getElementById("num");
 
 document
   .querySelectorAll('[name="b-selector"],[name="w-selector"]')
@@ -37,10 +41,10 @@ function setDisabled() {
     .querySelectorAll('[name="b-selector"],[name="w-selector"]')
     .forEach(function (e) {
       if (e.checked) {
-        if ((e.id).replace(regexs, "") == "b") {
-          selectmode[0] = parseInt((e.id).replace(regex, ""));
-        }else{
-          selectmode[1] = parseInt((e.id).replace(regex, ""));
+        if (e.id.replace(regexs, "") == "b") {
+          selectmode[0] = parseInt(e.id.replace(regex, ""));
+        } else {
+          selectmode[1] = parseInt(e.id.replace(regex, ""));
         }
       }
     });
@@ -62,18 +66,18 @@ function setDisabled() {
 
 function start(e) {
   if (document.getElementById("s1").checked) {
-    if (!document.getElementById("num").value) {
+    if (!exenum.value) {
       alert("実行回数が入力されていません");
       return;
-    } else if (document.getElementById("num").value < 1) {
+    } else if (exenum.value < 1) {
       alert("正しい実行回数を入力してください");
       return;
     }
   }
 
-  !document.getElementById("num").value
-    ? (movenum = 1)
-    : (movenum = document.getElementById("num").value);
+  init();
+
+  !exenum.value ? (movenum = 1) : (movenum = exenum.value);
 
   mode.classList.add("hide");
   fetch("/init", {
@@ -98,8 +102,6 @@ function start(e) {
     });
 }
 
-let board_size = 6; //盤面のサイズ
-
 // 初期化
 function init() {
   for (let i = 0; i < board_size; i++) {
@@ -117,16 +119,18 @@ function init() {
   }
 }
 
-function clicked(){
-  const y = this.parentNode.rowIndex;
-  const x = this.cellIndex;
+init();
 
-  console.log(x,y);
-}
+// 盤面がクリックされた時
+function clicked() {
+  let y = this.parentNode.rowIndex;
+  let x = this.cellIndex;
+  move = {
+    x: x,
+    y: y,
+    value: value,
+  };
 
-// 石の動きを送信する関数
-function sendMove(move) {
-  // APIエンドポイントにPOSTリクエストを送信
   fetch("/move", {
     method: "POST",
     headers: {

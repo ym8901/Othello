@@ -8,13 +8,15 @@ let move = {
   y: 4,
   value: 100,
 };
+let turn;
 let GAMEBOARD;
+let CANDIDATE;
 let movenum;
 let selectmode = [0, 0];
 let board_size = 6; //盤面のサイズ
 let value = 1; //石のポイント
+let extra_mode = 0;
 
-let jsonData;
 const board = document.getElementById("board");
 const h2 = document.querySelector("h2");
 const counter = document.getElementById("counter");
@@ -78,6 +80,7 @@ function start(e) {
   }
 
   !exenum.value ? (movenum = 1) : (movenum = exenum.value);
+  extra_mode = parseInt(e.target.id);
 
   mode.classList.add("hide");
   fetch("/init", {
@@ -97,7 +100,10 @@ function start(e) {
       // レスポンスの処理
       console.log(json_data);
       GAMEBOARD = json_data.gameboard;
+      CANDIDATE = json_data.candidate;
+      turn = json_data.turn;
       showBoard();
+      showCandidate();
     })
     .catch((error) => {
       console.error("Error:", error);
@@ -125,6 +131,9 @@ function init() {
 function clicked() {
   let y = this.parentNode.rowIndex;
   let x = this.cellIndex;
+  if(CANDIDATE[y][x][turn === 1 ? 0 : 1] < 1){
+    return;
+  }
   move = {
     x: x,
     y: y,
@@ -139,9 +148,14 @@ function clicked() {
     body: JSON.stringify(move),
   })
     .then((response) => response.json())
-    .then((data) => {
+    .then((json_data) => {
       // レスポンスの処理
-      console.log(data);
+      console.log(json_data);
+      GAMEBOARD = json_data.gameboard;
+      CANDIDATE = json_data.candidate;
+      turn = json_data.turn;
+      showBoard();
+      showCandidate();
     })
     .catch((error) => {
       console.error("Error:", error);
@@ -149,15 +163,36 @@ function clicked() {
 }
 
 function showBoard() {
+  console.log(extra_mode);
   for (let i = 0; i < board_size; i++) {
     for (let j = 0; j < board_size; j++) {
       const cell = board.rows[i].cells[j];
       const disk = cell.firstChild;
-      disk.className = GAMEBOARD[i][j] === BLACK ? "black" : GAMEBOARD[i][j] === WHITE ? "white" : null;
+      disk.className =
+        GAMEBOARD[i][j] >= BLACK
+          ? "black"
+          : GAMEBOARD[i][j] <= WHITE
+          ? "white"
+          : "";
+
+      if (Boolean(extra_mode)) {
+        disk.innerHTML = GAMEBOARD[i][j] === 0 ? null : GAMEBOARD[i][j];
+      }
+    }
+  }
+}
+
+function showCandidate() {
+  for (let i = 0; i < board_size; i++) {
+    for (let j = 0; j < board_size; j++) {
+      const cell = board.rows[i].cells[j];
+      cell.className =
+        CANDIDATE[i][j][turn === 1 ? 0 : 1] > 0 ? "Possible" : "cell";
     }
   }
 }
 
 window.onload = () => {
   init();
+  h2.textContent = "オセロ";
 };

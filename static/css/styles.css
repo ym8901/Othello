@@ -90,3 +90,54 @@ td.cell {
     background: white;
     border: solid 2px black
 }
+
+h2 {
+    text-align: center;
+    margin: 5px 0;
+}
+
+#counter {
+    margin: 0 auto;
+    width: 350px;
+    display: flex;
+    line-height: 50px;
+    font-weight: bold;
+    justify-content: space-between;
+}
+
+#numBlack {
+    font-size: 36px;
+    margin: 5px;
+    width: 100px;
+    height: 50px;
+    background: black;
+    color: white;
+    border-radius: 5px;
+}
+
+#numWhite {
+    font-size: 36px;
+    margin: 5px;
+    width: 100px;
+    height: 50px;
+    border: solid 1px black;
+    border-radius: 5px;
+}
+
+.Possible {
+    background: rgb(184, 237, 138);
+    width: 92px;
+    height: 92px;
+    margin: 4px;
+}
+
+.Possible:hover{
+    background: rgb(233, 245, 222);
+}
+
+.Possible div {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    margin: 0 auto;
+}

@@ -1,5 +1,6 @@
 const BLACK = 1,
-  WHITE = -1;
+  WHITE = -1,
+  EMPTY = 0;
 let data = [];
 // 石の動きを送信する例
 let move = {
@@ -7,6 +8,7 @@ let move = {
   y: 4,
   value: 100,
 };
+let GAMEBOARD;
 let movenum;
 let selectmode = [0, 0];
 let board_size = 6; //盤面のサイズ
@@ -75,8 +77,6 @@ function start(e) {
     }
   }
 
-  init();
-
   !exenum.value ? (movenum = 1) : (movenum = exenum.value);
 
   mode.classList.add("hide");
@@ -93,9 +93,11 @@ function start(e) {
     }),
   })
     .then((response) => response.json())
-    .then((data) => {
+    .then((json_data) => {
       // レスポンスの処理
-      console.log(data);
+      console.log(json_data);
+      GAMEBOARD = json_data.gameboard;
+      showBoard();
     })
     .catch((error) => {
       console.error("Error:", error);
@@ -118,8 +120,6 @@ function init() {
     board.appendChild(tr);
   }
 }
-
-init();
 
 // 盤面がクリックされた時
 function clicked() {
@@ -146,6 +146,16 @@ function clicked() {
     .catch((error) => {
       console.error("Error:", error);
     });
+}
+
+function showBoard() {
+  for (let i = 0; i < board_size; i++) {
+    for (let j = 0; j < board_size; j++) {
+      const cell = board.rows[i].cells[j];
+      const disk = cell.firstChild;
+      disk.className = GAMEBOARD[i][j] === BLACK ? "black" : GAMEBOARD[i][j] === WHITE ? "white" : null;
+    }
+  }
 }
 
 window.onload = () => {

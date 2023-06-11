@@ -8,7 +8,7 @@ app = Flask(__name__)
 def index():
     return index_func()
 
-@app.route('/move', methods=['POST'])
+@app.route('/move', methods=['POST', 'GET'])
 def move():
     return move_func()
 

@@ -3,8 +3,9 @@ import numpy as np
 import json
 import logging
 from backend.debugger import raise_locals
+import random
 
-logging.basicConfig(filename='app.log', level=logging.DEBUG)
+logging.basicConfig(filename='app.log', level=logging.DEBUG ,encoding='utf-8')
 
 """
 定数宣言
@@ -57,27 +58,74 @@ def move_func():
         x = int(data['x'])
         y = int(data['y'])
         value = int(data['value'])
-        board[y][x] = value * turn
-        for i in range(len(direction)):
-            dx = x
-            dy = y
-            color = 0 if turn == black else 1
-            if(candidate[dy][dx][color] & direction[i][2]):
-                while(True):
-                    dx += direction[i][1]
-                    dy += direction[i][0]
-                    logging.debug(str(dy)+","+str(dx))
-                    if(np.sign(board[dy][dx]) == turn):
-                        break
-                    board[dy][dx] *= -1
 
-        turn = -turn
+        Reverse_func(x, y, value)
         create_candidate()
-        data = {}
-        data["gameboard"] = board.tolist()
-        data["candidate"] = candidate.tolist()
-        data["turn"] = turn
+        turn = -turn
+
+        data = create_json()
         return json.dumps(data)
+
+    elif(request.method == 'GET'):
+        if((blackmode if turn == black else whitemode) == 1):
+            randmoves = []
+            color = 0 if turn == black else 1
+            for x in range(BOARD_SIZE):
+                for y in range(BOARD_SIZE):
+                    if(candidate[y][x][color] != 0):
+                        randmoves.append([x, y])
+
+            move = random.choice(randmoves)
+            Reverse_func(move[0], move[1], abs(turn))
+            create_candidate()
+            turn = -turn
+
+            data = create_json()
+            return json.dumps(data)
+
+
+def create_json():
+    global turn
+    global candidate
+    data = {}
+    data["gameboard"] = board.tolist()
+    data["candidate"] = candidate.tolist()
+    data["checkmate"] = False
+    color = 0 if turn == black else 1
+    if(sum([(candidate[x][y][color]) for x in range(BOARD_SIZE) for y in range(BOARD_SIZE)])):
+        data["turn"] = turn
+        data["skipped"] = False
+    else:
+        color = 0 if turn == white else 1
+        if (checkmate_func()):
+            data['checkmate'] = True
+        turn = -turn
+        data["turn"] = turn
+        data['skipped'] = True
+    return data
+
+
+def checkmate_func():
+    if(not(sum([(candidate[x][y][0]) for x in range(BOARD_SIZE) for y in range(BOARD_SIZE)]))):
+        if(not(sum([(candidate[x][y][1]) for x in range(BOARD_SIZE) for y in range(BOARD_SIZE)]))):
+            return True
+    return False
+
+def Reverse_func(x, y, value):
+    global turn
+    board[y][x] = value * turn
+    for i in range(len(direction)):
+        dx = x
+        dy = y
+        color = 0 if turn == black else 1
+        if(candidate[dy][dx][color] & direction[i][2]):
+            while(True):
+                dx += direction[i][1]
+                dy += direction[i][0]
+                if(np.sign(board[dy][dx]) == turn):
+                    break
+                board[dy][dx] *= -1
+    return
 
 
 def create_candidate():
@@ -137,7 +185,6 @@ def init_func():
             board[3][2] = board[2][3] = black
             create_candidate()
 
-        data = {}
         data["gameboard"] = board.tolist()
         data["candidate"] = candidate.tolist()
         data["turn"] = turn

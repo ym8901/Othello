@@ -10,12 +10,16 @@ let move = {
 };
 let turn;
 let GAMEBOARD;
+let PASTBOARD;
 let CANDIDATE;
 let movenum;
 let selectmode = [0, 0];
 let board_size = 6; //盤面のサイズ
 let value = 1; //石のポイント
 let extra_mode = 0;
+let numBlack = 0;
+let numWhite = 0;
+let checkmate = false;
 
 const board = document.getElementById("board");
 const h2 = document.querySelector("h2");
@@ -68,7 +72,7 @@ function setDisabled() {
   }
 }
 
-function start(e) {
+async function start(e) {
   if (document.getElementById("s1").checked) {
     if (!exenum.value) {
       alert("実行回数が入力されていません");
@@ -79,10 +83,11 @@ function start(e) {
     }
   }
 
+  checkmate = false
+  mode.classList.add("hide");
   !exenum.value ? (movenum = 1) : (movenum = exenum.value);
   extra_mode = parseInt(e.target.id);
 
-  mode.classList.add("hide");
   fetch("/init", {
     method: "POST",
     headers: {
@@ -100,10 +105,24 @@ function start(e) {
       // レスポンスの処理
       console.log(json_data);
       GAMEBOARD = json_data.gameboard;
+      PASTBOARD = json_data.gameboard;
       CANDIDATE = json_data.candidate;
       turn = json_data.turn;
       showBoard();
       showCandidate();
+      showturn();
+      if ((turn === BLACK ? selectmode[0] : selectmode[1]) != 0) {
+        setTimeout(Autogetter, 500);
+        if (selectmode[0] * selectmode[1] != 0) {
+          while(true)
+          {
+            setTimeout(Autogetter,500);
+            if(checkmate){
+              break
+            }
+          }
+        }
+      }
     })
     .catch((error) => {
       console.error("Error:", error);
@@ -127,11 +146,44 @@ function init() {
   }
 }
 
+function Autogetter() {
+  fetch("/move", {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: null,
+  })
+    .then((response) => response.json())
+    .then((json_data) => {
+      // レスポンスの処理
+      console.log(json_data);
+      PASTBOARD = GAMEBOARD;
+      GAMEBOARD = json_data.gameboard;
+      CANDIDATE = json_data.candidate;
+      turn = json_data.turn;
+      showturn();
+      showBoard();
+      showCandidate();
+      if (json_data.checkmate) {
+        checkmate = true;
+        endingGame();
+        return;
+      }
+      if (json_data.skipped) {
+        showSkipped();
+      }
+    })
+    .catch((error) => {
+      console.error("Error:", error);
+    });
+}
+
 // 盤面がクリックされた時
 function clicked() {
   let y = this.parentNode.rowIndex;
   let x = this.cellIndex;
-  if(CANDIDATE[y][x][turn === 1 ? 0 : 1] < 1){
+  if (CANDIDATE[y][x][turn === 1 ? 0 : 1] < 1) {
     return;
   }
   move = {
@@ -151,11 +203,24 @@ function clicked() {
     .then((json_data) => {
       // レスポンスの処理
       console.log(json_data);
+      PASTBOARD = GAMEBOARD;
       GAMEBOARD = json_data.gameboard;
       CANDIDATE = json_data.candidate;
       turn = json_data.turn;
+      showturn();
       showBoard();
       showCandidate();
+      if (json_data.checkmate) {
+        endingGame();
+        return;
+      }
+      if (json_data.skipped) {
+        showSkipped();
+      } else {
+        if ((turn === BLACK ? selectmode[0] : selectmode[1]) != 0) {
+          setTimeout(Autogetter, 500);
+        }
+      }
     })
     .catch((error) => {
       console.error("Error:", error);
@@ -168,6 +233,12 @@ function showBoard() {
     for (let j = 0; j < board_size; j++) {
       const cell = board.rows[i].cells[j];
       const disk = cell.firstChild;
+      if (PASTBOARD[i][j] != GAMEBOARD[i][j]) {
+        cell.animate(
+          { opacity: [0.4, 1] },
+          { duration: 700, fill: "forwards" }
+        );
+      }
       disk.className =
         GAMEBOARD[i][j] >= BLACK
           ? "black"
@@ -192,7 +263,53 @@ function showCandidate() {
   }
 }
 
+function showturn() {
+  h2.textContent = turn === BLACK ? "黒のターン" : "白のターン";
+  numBlack = numWhite = 0;
+  for (let i = 0; i < board_size; i++) {
+    for (let j = 0; j < board_size; j++) {
+      numBlack += parseInt(GAMEBOARD[i][j] >= BLACK ? GAMEBOARD[i][j] : 0);
+      numWhite += parseInt(
+        GAMEBOARD[i][j] <= WHITE ? Math.abs(GAMEBOARD[i][j]) : 0
+      );
+    }
+  }
+  document.getElementById("numBlack").textContent = numBlack;
+  document.getElementById("numWhite").textContent = numWhite;
+  return;
+}
+
+function showSkipped() {
+  h2.textContent = turn === WHITE ? "黒スキップ!" : "白スキップ!";
+  showAnime();
+  setTimeout(showturn, 2000);
+  return;
+}
+
+function showAnime() {
+  h2.animate({ opacity: [0, 1] }, { duration: 500, iterations: 4 });
+}
+
+function endingGame() {
+  h2.textContent =
+    numBlack > numWhite
+      ? "黒の勝ち!"
+      : numWhite > numBlack
+      ? "白の勝ち"
+      : "引き分け!";
+  showAnime();
+  const restartBtn = document.getElementById("restartBtn");
+  restartBtn.classList.remove("hide");
+  restartBtn.animate(
+    { opacity: [1, 0.5, 1] },
+    { delay: 2000, duration: 3000, iterations: "Infinity" }
+  );
+
+  restartBtn.addEventListener("click", () => {
+    document.location.reload();
+  });
+}
+
 window.onload = () => {
   init();
-  h2.textContent = "オセロ";
 };

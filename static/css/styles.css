@@ -53,6 +53,7 @@ p {
 }
 
 td.cell {
+    pointer-events: none;
     background: rgb(128, 216, 154);
     width: 92px;
     height: 92px;
@@ -125,6 +126,7 @@ h2 {
 }
 
 .Possible {
+    pointer-events: auto;
     background: rgb(128, 216, 154);
     width: 92px;
     height: 92px;

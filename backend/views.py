@@ -3,6 +3,7 @@ import numpy as np
 import json
 import logging
 from backend.debugger import raise_locals
+from backend.models import GameModel
 import random
 
 logging.basicConfig(filename='app.log', level=logging.DEBUG ,encoding='utf-8')

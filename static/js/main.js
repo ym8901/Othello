@@ -19,7 +19,8 @@ let value = 1; //石のポイント
 let extra_mode = 0;
 let numBlack = 0;
 let numWhite = 0;
-let checkmate = false;
+let paused = false;
+let speed = 500;
 
 const board = document.getElementById("board");
 const h2 = document.querySelector("h2");
@@ -35,6 +36,35 @@ document
 
 document.querySelectorAll('[class="select"]').forEach((value) => {
   value.addEventListener("click", start);
+});
+
+document.addEventListener("keydown", (event) => {
+  if (event.code === "KeyP") {
+    if (selectmode[0] * selectmode[1] === 0) {
+      return;
+    }
+    paused = !paused;
+    if (paused) {
+      h2.textContent = "一時停止";
+      showAnime();
+    } else {
+      h2.textContent = "再開";
+      showAnime();
+      setTimeout(Autogetter, speed * 3);
+    }
+  } else if (event.code === "ArrowDown") {
+    if (speed >= 210) {
+      speed -= 10;
+      h2.textContent = speed;
+      showAnime();
+    }
+  } else if (event.code === "ArrowUp") {
+    if (speed <= 790) {
+      speed += 10;
+      h2.textContent = speed;
+      showAnime();
+    }
+  }
 });
 
 // 特定のラジオボタンが選択された時、一部のラジオボタンとテキストボックスを無効化する
@@ -83,7 +113,6 @@ async function start(e) {
     }
   }
 
-  checkmate = false
   mode.classList.add("hide");
   !exenum.value ? (movenum = 1) : (movenum = exenum.value);
   extra_mode = parseInt(e.target.id);
@@ -111,17 +140,9 @@ async function start(e) {
       showBoard();
       showCandidate();
       showturn();
+
       if ((turn === BLACK ? selectmode[0] : selectmode[1]) != 0) {
-        setTimeout(Autogetter, 500);
-        if (selectmode[0] * selectmode[1] != 0) {
-          while(true)
-          {
-            setTimeout(Autogetter,500);
-            if(checkmate){
-              break
-            }
-          }
-        }
+        setTimeout(Autogetter, speed);
       }
     })
     .catch((error) => {
@@ -147,6 +168,9 @@ function init() {
 }
 
 function Autogetter() {
+  if (paused) {
+    return;
+  }
   fetch("/move", {
     method: "GET",
     headers: {
@@ -166,12 +190,14 @@ function Autogetter() {
       showBoard();
       showCandidate();
       if (json_data.checkmate) {
-        checkmate = true;
         endingGame();
         return;
       }
       if (json_data.skipped) {
         showSkipped();
+      }
+      if ((turn === BLACK ? selectmode[0] : selectmode[1]) != 0) {
+        setTimeout(Autogetter, speed);
       }
     })
     .catch((error) => {
@@ -218,7 +244,7 @@ function clicked() {
         showSkipped();
       } else {
         if ((turn === BLACK ? selectmode[0] : selectmode[1]) != 0) {
-          setTimeout(Autogetter, 500);
+          setTimeout(Autogetter, speed);
         }
       }
     })
@@ -228,7 +254,6 @@ function clicked() {
 }
 
 function showBoard() {
-  console.log(extra_mode);
   for (let i = 0; i < board_size; i++) {
     for (let j = 0; j < board_size; j++) {
       const cell = board.rows[i].cells[j];
@@ -258,7 +283,10 @@ function showCandidate() {
     for (let j = 0; j < board_size; j++) {
       const cell = board.rows[i].cells[j];
       cell.className =
-        CANDIDATE[i][j][turn === 1 ? 0 : 1] > 0 ? "Possible" : "cell";
+        CANDIDATE[i][j][turn === 1 ? 0 : 1] > 0 &&
+        selectmode[turn === 1 ? 0 : 1] === 0
+          ? "Possible"
+          : "cell";
     }
   }
 }
@@ -287,7 +315,7 @@ function showSkipped() {
 }
 
 function showAnime() {
-  h2.animate({ opacity: [0, 1] }, { duration: 500, iterations: 4 });
+  h2.animate({ opacity: [0, 1] }, { duration: speed, iterations: 3 });
 }
 
 function endingGame() {

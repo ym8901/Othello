@@ -867,3 +867,880 @@ INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 20:45:37] "GET / HTTP/1.1" 200 -
 INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 20:45:37] "[36mGET /static/css/radiobutton.css HTTP/1.1[0m" 304 -
 INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 20:45:37] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
 INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 20:45:37] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 141-133-019
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 20:48:20] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 20:48:20] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 20:48:20] "GET /static/js/main.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 20:48:20] "[36mGET /static/css/radiobutton.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 20:48:23] "POST /init HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 20:48:24] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 20:48:24] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 20:48:24] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 20:48:24] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 20:48:27] "POST /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 20:48:27] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 20:48:28] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 20:48:28] "[36mGET /static/css/radiobutton.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 20:48:28] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 20:48:28] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 141-133-019
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 20:59:55] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 20:59:56] "GET /static/js/main.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 20:59:56] "[36mGET /static/css/radiobutton.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 20:59:56] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 20:59:58] "POST /init HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 20:59:58] "[35m[1mGET /move HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 21:00:01] "POST /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 21:00:02] "POST /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 21:01:40] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 21:01:40] "[36mGET /static/css/radiobutton.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 21:01:40] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 21:01:40] "GET /static/js/main.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 21:01:43] "POST /init HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 21:01:43] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 21:01:46] "POST /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 21:01:47] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 21:01:48] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 21:01:48] "[36mGET /static/css/radiobutton.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 21:01:48] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 21:01:48] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 21:01:51] "POST /init HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 21:01:51] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 21:02:23] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 21:02:23] "[36mGET /static/css/radiobutton.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 21:02:23] "GET /static/js/main.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 21:02:23] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 21:02:25] "POST /init HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 21:02:25] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 21:03:58] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 21:03:58] "[36mGET /static/css/radiobutton.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 21:03:58] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 21:03:58] "GET /static/js/main.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 21:04:00] "POST /init HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 21:04:00] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 141-133-019
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 21:04:35] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 21:04:36] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 21:04:36] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 21:04:36] "[36mGET /static/css/radiobutton.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 21:04:39] "POST /init HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 21:04:39] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 21:07:08] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 21:07:08] "[36mGET /static/css/radiobutton.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 21:07:08] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 21:07:08] "GET /static/js/main.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 21:07:11] "POST /init HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 21:07:11] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 21:07:15] "POST /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 21:07:16] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 141-133-019
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 21:17:45] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 21:17:45] "GET /static/js/main.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 21:17:45] "[36mGET /static/css/radiobutton.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 21:17:45] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 21:17:47] "POST /init HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 21:17:47] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 21:17:48] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 141-133-019
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 21:18:44] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 21:18:45] "[36mGET /static/css/radiobutton.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 21:18:45] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 21:18:45] "GET /static/js/main.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 21:18:47] "POST /init HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 21:18:47] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 21:18:52] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 141-133-019
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 21:22:41] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 21:22:41] "GET /static/js/main.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 21:22:41] "[36mGET /static/css/radiobutton.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 21:22:41] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 21:22:44] "POST /init HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 21:22:44] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 21:22:45] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 21:22:45] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 21:22:46] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 21:22:46] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 21:22:47] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 21:22:47] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 21:22:48] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 21:22:48] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 21:22:49] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 21:22:49] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 21:22:50] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 21:22:50] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 21:22:51] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 21:22:51] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 21:22:52] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 21:22:52] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 21:22:53] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 21:22:53] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 21:22:54] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 21:22:54] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 21:22:55] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 21:22:55] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 21:22:56] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 21:22:56] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 21:22:57] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 21:22:57] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 21:22:58] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 21:22:58] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 21:22:59] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 21:23:00] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 21:23:00] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 21:23:04] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 21:23:04] "[36mGET /static/css/radiobutton.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 21:23:04] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 21:23:04] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 21:23:07] "POST /init HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 21:23:08] "POST /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 21:23:09] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 21:23:10] "POST /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 21:23:10] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 141-133-019
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 22:58:15] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 22:58:15] "GET /static/js/main.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 22:58:15] "[36mGET /static/css/radiobutton.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 22:58:15] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 22:58:17] "[36mGET /static/css/radiobutton.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 22:58:17] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 22:58:19] "POST /init HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 22:58:22] "POST /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 22:58:23] "POST /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 22:58:23] "POST /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 22:58:24] "POST /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 22:58:24] "POST /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 22:58:25] "POST /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 22:58:25] "POST /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 22:58:26] "POST /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 22:58:26] "POST /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 22:58:26] "POST /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 22:58:27] "POST /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 22:58:27] "POST /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 22:58:27] "POST /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 22:58:28] "POST /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 22:58:28] "POST /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 22:58:28] "POST /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 22:58:29] "POST /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 22:58:31] "POST /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 22:58:33] "POST /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 22:58:36] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 22:58:36] "[36mGET /static/css/radiobutton.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 22:58:36] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 22:58:36] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 22:58:39] "POST /init HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 22:58:40] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 22:58:40] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 22:58:41] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 22:58:41] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 22:58:42] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 22:58:42] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 22:58:43] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 22:58:43] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 22:58:44] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 22:58:44] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 22:58:45] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 22:58:45] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 22:58:46] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 22:58:46] "POST /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 22:58:47] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 22:58:47] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 22:58:47] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 22:58:47] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 22:58:48] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 22:58:48] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 22:58:48] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 22:58:48] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 22:58:49] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 22:58:49] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 22:58:49] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 22:58:49] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 22:58:50] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 22:58:50] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 22:58:50] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 22:58:50] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 22:58:51] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 22:58:58] "POST /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 22:59:01] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 22:59:01] "[36mGET /static/css/radiobutton.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 22:59:01] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 22:59:01] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 22:59:02] "POST /init HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 22:59:03] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 22:59:03] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 22:59:04] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 22:59:04] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 22:59:05] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 22:59:06] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 22:59:06] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 22:59:07] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 22:59:07] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 22:59:08] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 22:59:08] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 22:59:09] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 22:59:09] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 22:59:10] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 22:59:10] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 22:59:11] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 22:59:11] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 22:59:12] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 22:59:12] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 22:59:13] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 22:59:13] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 22:59:14] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 22:59:14] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 22:59:15] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 22:59:15] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 22:59:16] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 22:59:16] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 22:59:17] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 22:59:17] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 22:59:18] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 22:59:18] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 22:59:19] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:00:40] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:00:40] "[36mGET /static/css/radiobutton.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:00:40] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:00:40] "GET /static/js/main.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:00:41] "POST /init HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:00:45] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:00:45] "[36mGET /static/css/radiobutton.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:00:45] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:00:45] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:00:47] "POST /init HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:00:47] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:00:48] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:00:48] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:00:49] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:00:49] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:00:50] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:00:50] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:00:51] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:00:51] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:00:52] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:00:52] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:00:53] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:00:54] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:00:54] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:00:55] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:00:55] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:00:56] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:00:56] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:00:57] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:00:57] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:00:58] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:00:58] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:00:59] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:00:59] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:01:00] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:01:00] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:01:01] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:01:01] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:01:02] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:01:02] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:01:03] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:01:03] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 141-133-019
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:02:39] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:02:41] "[36mGET /static/css/radiobutton.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:02:41] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:02:41] "GET /static/js/main.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:02:43] "POST /init HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:02:53] "POST /move HTTP/1.1" 200 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 141-133-019
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:03:37] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:03:38] "[36mGET /static/css/radiobutton.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:03:38] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:03:38] "GET /static/js/main.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:03:40] "POST /init HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:03:41] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:03:41] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:03:48] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:03:48] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:03:49] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:03:49] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:03:53] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:03:54] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:03:54] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:03:55] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:03:55] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:04:00] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:04:00] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:04:01] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:04:01] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:04:02] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:04:02] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:04:03] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:04:03] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:04:04] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:04:04] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:04:05] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:04:05] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:04:06] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:04:06] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:04:07] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:04:10] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:04:11] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:04:11] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:04:12] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:04:12] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:04:43] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 141-133-019
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:12:47] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:12:48] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:12:48] "[36mGET /static/css/radiobutton.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:12:48] "GET /static/js/main.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:12:50] "POST /init HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:12:51] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:12:51] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:12:52] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:12:52] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:12:55] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:12:56] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:12:56] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:12:57] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:12:57] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:12:58] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:12:58] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:12:58] "[36mGET /static/css/radiobutton.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:12:58] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:12:58] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:13:30] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:13:30] "[36mGET /static/css/radiobutton.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:13:30] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:13:30] "GET /static/js/main.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:13:32] "POST /init HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:13:32] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:13:33] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:13:35] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:13:36] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:13:36] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:13:37] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:13:38] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:13:38] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:13:39] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:13:39] "POST /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:13:39] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:13:40] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:13:40] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:13:40] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:13:40] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:13:41] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:13:41] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:13:41] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:13:41] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:13:42] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:13:42] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:13:42] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:13:42] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:13:43] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:13:43] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:13:43] "POST /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:13:43] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:13:43] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:13:43] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:13:44] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:13:44] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:13:44] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:13:44] "[35m[1mGET /move HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:13:44] "[35m[1mGET /move HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:13:53] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:13:53] "[36mGET /static/css/radiobutton.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:13:53] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:13:53] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 141-133-019
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:16:47] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:16:48] "[36mGET /static/css/radiobutton.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:16:48] "GET /static/js/main.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:16:48] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:16:49] "POST /init HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:16:50] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:16:50] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:16:51] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:16:51] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:16:57] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:16:58] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:16:58] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:16:59] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:16:59] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:17:00] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:17:01] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:17:01] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:17:02] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:17:08] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:17:08] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:17:09] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:17:09] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:17:10] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:17:10] "[36mGET /static/css/radiobutton.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:17:10] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:17:10] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 141-133-019
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:20:03] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:20:03] "GET /static/js/main.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:20:03] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:20:03] "[36mGET /static/css/radiobutton.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:20:05] "POST /init HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:20:05] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:20:06] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:20:06] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:20:12] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:20:12] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:20:13] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:20:13] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:20:14] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:20:14] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:20:15] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:20:15] "[36mGET /static/css/radiobutton.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:20:15] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:20:15] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:21:52] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:21:52] "[36mGET /static/css/radiobutton.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:21:52] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:21:52] "GET /static/js/main.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:21:53] "POST /init HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:21:54] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:21:55] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:21:55] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:22:01] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:22:01] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:22:02] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:22:02] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:22:03] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:22:03] "[36mGET /static/css/radiobutton.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:22:03] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:22:03] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 141-133-019
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:33:40] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:33:41] "GET /static/js/main.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:33:41] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:33:41] "[36mGET /static/css/radiobutton.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:33:45] "POST /init HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:33:46] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:33:46] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:33:47] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:33:47] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:33:48] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:33:54] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:33:55] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:33:55] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:33:56] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:33:56] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:33:57] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:33:57] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:33:58] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:33:58] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:33:59] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:33:59] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:34:00] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:34:00] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:34:00] "[36mGET /static/css/radiobutton.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:34:00] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:34:00] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 141-133-019
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:44:09] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:44:09] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:44:09] "[36mGET /static/css/radiobutton.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:44:09] "GET /static/js/main.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:44:14] "POST /init HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:44:15] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:44:15] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:44:24] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:44:24] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:44:25] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:44:25] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:44:26] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:44:27] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:44:27] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:44:28] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:44:29] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:44:30] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:44:30] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:44:31] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:44:31] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:44:32] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:44:33] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:44:33] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:44:34] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:44:34] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:44:34] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:44:35] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:44:35] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:44:35] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:44:36] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:44:36] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:44:36] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:44:37] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:44:37] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:44:37] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:44:38] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:44:38] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:44:41] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:44:41] "[36mGET /static/css/radiobutton.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:44:41] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:44:41] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:44:44] "POST /init HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:44:44] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:44:45] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:44:45] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:44:46] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:44:46] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:44:47] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:44:47] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:44:48] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:44:49] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:44:49] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:44:50] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:44:50] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:44:51] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:44:52] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:44:53] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:44:53] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:44:54] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:44:55] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:44:55] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:44:56] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:44:57] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:44:58] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:44:58] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:44:58] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:44:58] "[36mGET /static/css/radiobutton.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:44:58] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:44:58] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:47:00] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:47:00] "[36mGET /static/css/radiobutton.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:47:00] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:47:00] "GET /static/js/main.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:47:03] "POST /init HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:47:03] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:47:04] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:47:04] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:47:05] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:47:05] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:47:06] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:47:06] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:47:07] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:47:07] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:47:08] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:47:08] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:47:09] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:47:09] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:47:09] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:47:10] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:47:10] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:47:11] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:47:32] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:47:32] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:47:33] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:47:34] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:47:35] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:47:36] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:47:36] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:47:37] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:47:37] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:47:38] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:47:38] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:47:39] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:47:39] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:47:39] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:47:40] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:47:42] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:47:42] "[36mGET /static/css/radiobutton.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:47:42] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:47:42] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:47:44] "POST /init HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:47:45] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:47:52] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:47:52] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:47:52] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:47:53] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:47:53] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:47:53] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:47:53] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:47:53] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:47:54] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:47:54] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:47:54] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:47:54] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:47:54] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:47:55] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:47:55] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:47:55] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:47:55] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:47:56] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:47:56] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:47:56] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:47:56] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:47:56] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:47:57] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:47:57] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:47:57] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:47:57] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:47:58] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:47:58] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:47:58] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:47:58] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:47:58] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:48:02] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:48:02] "[36mGET /static/css/radiobutton.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:48:02] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:48:02] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 141-133-019
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:53:04] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:53:04] "[36mGET /static/css/radiobutton.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:53:04] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:53:04] "GET /static/js/main.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:53:06] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:53:06] "[36mGET /static/css/radiobutton.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:53:06] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:53:07] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:53:09] "POST /init HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:53:09] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:53:10] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:53:10] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:53:11] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:53:11] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:53:12] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:53:12] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:53:25] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:53:25] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:53:25] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:53:25] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:53:25] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:53:26] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:53:26] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:53:26] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:53:26] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:53:26] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:53:27] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:53:27] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:53:27] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:53:27] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:53:28] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:53:28] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:53:45] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:53:46] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:53:47] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:53:48] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:53:48] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:53:49] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:53:50] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:53:51] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:53:52] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 141-133-019
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:56:29] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:56:30] "[36mGET /static/css/radiobutton.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:56:30] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:56:30] "GET /static/js/main.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:56:32] "POST /init HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:56:33] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:56:33] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:56:34] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:56:34] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:56:35] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:56:35] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:56:36] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:56:36] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:56:37] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:56:37] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:56:38] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:56:38] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:56:39] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:56:39] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:56:39] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:56:40] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:56:40] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:56:40] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:56:41] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:56:41] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:56:41] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:56:42] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:56:42] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:56:42] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:56:43] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:56:43] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:56:43] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:56:44] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:56:44] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:56:44] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:56:45] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Jun/2023 23:56:45] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 141-133-019
+INFO:werkzeug:127.0.0.1 - - [12/Jun/2023 15:58:54] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Jun/2023 15:58:55] "[36mGET /static/css/radiobutton.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Jun/2023 15:58:55] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Jun/2023 15:58:55] "GET /static/js/main.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Jun/2023 15:59:01] "POST /init HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Jun/2023 15:59:01] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Jun/2023 15:59:02] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Jun/2023 15:59:02] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Jun/2023 15:59:03] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Jun/2023 15:59:03] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Jun/2023 15:59:04] "POST /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Jun/2023 15:59:04] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Jun/2023 15:59:04] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Jun/2023 15:59:04] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Jun/2023 15:59:05] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Jun/2023 15:59:05] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Jun/2023 15:59:05] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Jun/2023 15:59:06] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Jun/2023 15:59:06] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Jun/2023 15:59:06] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Jun/2023 15:59:06] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Jun/2023 15:59:07] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Jun/2023 15:59:07] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Jun/2023 15:59:07] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Jun/2023 15:59:07] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Jun/2023 15:59:08] "POST /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Jun/2023 15:59:08] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Jun/2023 15:59:08] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Jun/2023 15:59:08] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Jun/2023 15:59:08] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Jun/2023 15:59:08] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Jun/2023 15:59:09] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Jun/2023 15:59:09] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Jun/2023 15:59:09] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Jun/2023 15:59:09] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Jun/2023 15:59:09] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Jun/2023 15:59:09] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Jun/2023 15:59:10] "[35m[1mGET /move HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [12/Jun/2023 15:59:10] "[35m[1mGET /move HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [12/Jun/2023 15:59:13] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Jun/2023 15:59:13] "[36mGET /static/css/radiobutton.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Jun/2023 15:59:13] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Jun/2023 15:59:13] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 141-133-019
+INFO:werkzeug:127.0.0.1 - - [12/Jun/2023 16:04:07] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Jun/2023 16:04:08] "GET /static/js/main.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Jun/2023 16:04:08] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Jun/2023 16:04:08] "[36mGET /static/css/radiobutton.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Jun/2023 16:04:11] "POST /init HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Jun/2023 16:04:12] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Jun/2023 16:04:12] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Jun/2023 16:04:13] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Jun/2023 16:04:13] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Jun/2023 16:04:14] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Jun/2023 16:04:14] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Jun/2023 16:04:15] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Jun/2023 16:04:18] "POST /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Jun/2023 16:04:20] "POST /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Jun/2023 16:04:20] "POST /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Jun/2023 16:04:21] "POST /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Jun/2023 16:04:22] "POST /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Jun/2023 16:04:23] "POST /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Jun/2023 16:04:25] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Jun/2023 16:04:25] "[36mGET /static/css/radiobutton.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Jun/2023 16:04:25] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Jun/2023 16:04:25] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Jun/2023 16:07:29] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Jun/2023 16:07:29] "[36mGET /static/css/radiobutton.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Jun/2023 16:07:29] "GET /static/css/styles.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Jun/2023 16:07:29] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Jun/2023 16:07:30] "POST /init HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Jun/2023 16:07:31] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Jun/2023 16:07:32] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Jun/2023 16:07:41] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Jun/2023 16:07:42] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Jun/2023 16:07:42] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Jun/2023 16:07:43] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Jun/2023 16:07:43] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Jun/2023 16:07:44] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Jun/2023 16:07:45] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Jun/2023 16:07:45] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Jun/2023 16:07:46] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Jun/2023 16:07:46] "GET /move HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Jun/2023 16:07:46] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Jun/2023 16:07:46] "[36mGET /static/css/radiobutton.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Jun/2023 16:07:46] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Jun/2023 16:07:46] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [12/Jun/2023 16:07:49] "POST /init HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Jun/2023 16:07:50] "GET /move HTTP/1.1" 200 -

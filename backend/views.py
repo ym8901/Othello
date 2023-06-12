@@ -6,7 +6,7 @@ from backend.debugger import raise_locals
 from backend.models import GameModel
 import random
 
-logging.basicConfig(filename='app.log', level=logging.DEBUG ,encoding='utf-8')
+logging.basicConfig(filename='app.log', level=logging.DEBUG, encoding='utf-8')
 
 """
 定数宣言
@@ -22,6 +22,7 @@ whitemode = 0
 blackmode = 0
 modenum = 0
 exenum = 0
+turncount = 0
 
 # 方向(２進数)
 LEFT = 2**0  # =1
@@ -50,21 +51,28 @@ def index_func():
     # ホームページの表示
     return render_template('index.html')
 
-
 def move_func():
+    db = GameModel()
+    db.__init__()
+
     if request.method == 'POST':
-        global turn
-        global candidate
+        global turn,candidate,turncount
+        
         data = request.get_json()
         x = int(data['x'])
         y = int(data['y'])
         value = int(data['value'])
-
+        
+        db.save_move(turncount,turn,value,y*10+x)
+        db.close()
+        
         Reverse_func(x, y, value)
         create_candidate()
         turn = -turn
+        turncount += 1
 
         data = create_json()
+        
         return json.dumps(data)
 
     elif(request.method == 'GET'):
@@ -77,9 +85,13 @@ def move_func():
                         randmoves.append([x, y])
 
             move = random.choice(randmoves)
+            db.save_move(turncount,turn,1,move[1]*10+move[0])
+            db.close()
+            
             Reverse_func(move[0], move[1], abs(turn))
             create_candidate()
             turn = -turn
+            turncount += 1
 
             data = create_json()
             return json.dumps(data)
@@ -107,10 +119,22 @@ def create_json():
 
 
 def checkmate_func():
+    bpoint = wpoint = 0
     if(not(sum([(candidate[x][y][0]) for x in range(BOARD_SIZE) for y in range(BOARD_SIZE)]))):
         if(not(sum([(candidate[x][y][1]) for x in range(BOARD_SIZE) for y in range(BOARD_SIZE)]))):
+            db = GameModel()
+            db.__init__()
+            for y in range(BOARD_SIZE):
+                for x in range(BOARD_SIZE):
+                    if(np.sign(board[y][x]) == black):
+                        bpoint += board[y][x]
+                    else:
+                        wpoint += -board[y][x]
+            winner = black if bpoint > wpoint else white
+            db.save_game_result(winner,blackmode,whitemode,modenum)
             return True
     return False
+
 
 def Reverse_func(x, y, value):
     global turn
@@ -169,7 +193,7 @@ def neighborhood_search(x, y, turncolor):
 
 
 def init_func():
-    global board, candidate, whitemode, blackmode, exenum, turn
+    global board, candidate, whitemode, blackmode, exenum, turn , turncount
 
     if request.method == 'POST':
         data = request.get_json()
@@ -178,6 +202,7 @@ def init_func():
         modenum = data['modenum']
         exenum = data['exenum']
         turn = black
+        turncount = 1
 
         board = np.zeros((BOARD_SIZE, BOARD_SIZE), dtype=int)
         candidate = np.zeros((BOARD_SIZE, BOARD_SIZE, 2), dtype=int)

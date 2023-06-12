@@ -310,7 +310,7 @@ function showturn() {
 function showSkipped() {
   h2.textContent = turn === WHITE ? "黒スキップ!" : "白スキップ!";
   showAnime();
-  setTimeout(showturn, 2000);
+  setTimeout(showturn, speed*3);
   return;
 }
 
@@ -330,7 +330,7 @@ function endingGame() {
   restartBtn.classList.remove("hide");
   restartBtn.animate(
     { opacity: [1, 0.5, 1] },
-    { delay: 2000, duration: 3000, iterations: "Infinity" }
+    { delay: speed*3, duration: speed*6, iterations: "Infinity" }
   );
 
   restartBtn.addEventListener("click", () => {

@@ -24,7 +24,7 @@ main {
     margin-top: 10px;
 }
 
-h3,
+h1,
 p {
     color: #AAAAAA;
     font-size: 17px;
@@ -79,7 +79,7 @@ td.cell {
 }
 
 .hide {
-    display: none;
+    display: none !important;
 }
 
 .black {
@@ -127,13 +127,13 @@ h2 {
 
 .Possible {
     pointer-events: auto;
-    background: rgb(128, 216, 154);
+    background: rgb(181 239 177);
     width: 92px;
     height: 92px;
     margin: 4px;
 }
 
-.Possible:hover{
+.Possible:hover {
     background: rgb(245, 245, 222);
 }
 
@@ -159,4 +159,64 @@ h2 {
     transform: translate(-50%, -110%);
     color: black;
     background: white;
-  }
+}
+
+#value3 {
+    margin-top: 0;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+h3 {
+    opacity: 0.5;
+    position: relative;
+    font-size: 22px;
+    height: 35px;
+    margin: 5px 50px 0 50px;
+    border: solid 1px black;
+    border-radius: 10px 0px 0px 10px;
+    padding: 0.5rem 1.5rem 0.3rem 1.5rem;
+    word-break: break-all;
+    color: #ffffff;
+    background: #000;
+}
+
+h3.selected {
+    opacity: 1;
+}
+
+h3.w {
+    color: #000;
+    background: #fff;
+}
+
+h3:after {
+    position: absolute;
+    top: -1px;
+    right: -41px;
+    width: 0;
+    height: 0;
+    content: '';
+    border: solid 1px black;
+    border-width: 49px 40px 0 0;
+    border-style: solid;
+    border-color: #000 transparent transparent transparent;
+}
+
+h3:hover {
+    background: rgb(78, 78, 71);
+}
+
+h3 span {
+    text-align: left;
+    font-size: 2.5rem;
+    letter-spacing: -4px;
+    width: 47px;
+    position: absolute;
+    top: 0;
+    right: -78px;
+    display: block;
+    padding-top: 4px;
+    padding-right: 10px;
+    color: #000000;
+}

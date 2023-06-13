@@ -21,10 +21,13 @@ let numBlack = 0;
 let numWhite = 0;
 let paused = false;
 let speed = 500;
+const regex = /[^0-9]/g;
+const regexs = /[^a-zA-Z]+$/g;
 
 const board = document.getElementById("board");
 const h2 = document.querySelector("h2");
 const counter = document.getElementById("counter");
+const valuecounter = document.getElementById("value3");
 const mode = document.getElementById("mode");
 const exenum = document.getElementById("num");
 
@@ -37,6 +40,17 @@ document
 document.querySelectorAll('[class="select"]').forEach((value) => {
   value.addEventListener("click", start);
 });
+
+const vselect = document.getElementsByClassName("valueselect");
+for (let i = 0; i < vselect.length; i++) {
+  vselect[i].addEventListener("click", function (e) {
+    const selected =  document.getElementsByClassName("selected")[0];
+    console.log(e.target.id);
+    value = e.target.id;
+    selected.classList.remove("selected");
+    e.target.classList.add("selected");
+  });
+}
 
 document.addEventListener("keydown", (event) => {
   if (event.code === "KeyP") {
@@ -72,8 +86,6 @@ function setDisabled() {
   var isAnyChecked = false;
   var radioGroups = document.querySelectorAll('[id="b0"],[id="w0"]');
   var targetElement = document.getElementById("exmode");
-  const regex = /[^0-9]/g;
-  const regexs = /[^a-zA-Z]+$/g;
 
   document
     .querySelectorAll('[name="b-selector"],[name="w-selector"]')
@@ -113,10 +125,14 @@ async function start(e) {
     }
   }
 
-  mode.classList.add("hide");
   !exenum.value ? (movenum = 1) : (movenum = exenum.value);
   extra_mode = parseInt(e.target.id);
 
+  mode.classList.add("hide");
+  counter.classList.remove("hide");
+  if (extra_mode) {
+    valuecounter.classList.remove("hide");
+  }
   fetch("/init", {
     method: "POST",
     headers: {
@@ -310,7 +326,7 @@ function showturn() {
 function showSkipped() {
   h2.textContent = turn === WHITE ? "黒スキップ!" : "白スキップ!";
   showAnime();
-  setTimeout(showturn, speed*3);
+  setTimeout(showturn, speed * 3);
   return;
 }
 
@@ -330,7 +346,7 @@ function endingGame() {
   restartBtn.classList.remove("hide");
   restartBtn.animate(
     { opacity: [1, 0.5, 1] },
-    { delay: speed*3, duration: speed*6, iterations: "Infinity" }
+    { delay: speed * 3, duration: speed * 6, iterations: "Infinity" }
   );
 
   restartBtn.addEventListener("click", () => {

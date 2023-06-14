@@ -8,14 +8,13 @@ let move = {
   y: 4,
   value: 100,
 };
-let turn;
+let turn = BLACK;
 let GAMEBOARD;
 let PASTBOARD;
 let CANDIDATE;
 let movenum;
 let selectmode = [0, 0];
 let board_size = 6; //盤面のサイズ
-let value = 1; //石のポイント
 let extra_mode = 0;
 let numBlack = 0;
 let numWhite = 0;
@@ -23,6 +22,9 @@ let paused = false;
 let speed = 500;
 const regex = /[^0-9]/g;
 const regexs = /[^a-zA-Z]+$/g;
+let values = [1, 1];
+let bs;
+let ws;
 
 const board = document.getElementById("board");
 const h2 = document.querySelector("h2");
@@ -44,10 +46,11 @@ document.querySelectorAll('[class="select"]').forEach((value) => {
 const vselect = document.getElementsByClassName("valueselect");
 for (let i = 0; i < vselect.length; i++) {
   vselect[i].addEventListener("click", function (e) {
-    const selected =  document.getElementsByClassName("selected")[0];
-    console.log(e.target.id);
-    value = e.target.id;
-    selected.classList.remove("selected");
+    if (values[turn === BLACK ? 0 : 1] != 0) {
+      const selected = document.getElementsByClassName("selected")[0];
+      selected.classList.remove("selected");
+    }
+    values[turn === BLACK ? 0 : 1] = e.target.id;
     e.target.classList.add("selected");
   });
 }
@@ -127,6 +130,9 @@ async function start(e) {
 
   !exenum.value ? (movenum = 1) : (movenum = exenum.value);
   extra_mode = parseInt(e.target.id);
+  if (extra_mode) {
+    values[0] = values[1] = 100;
+  }
 
   mode.classList.add("hide");
   counter.classList.remove("hide");
@@ -141,18 +147,21 @@ async function start(e) {
     body: JSON.stringify({
       black: selectmode[0],
       white: selectmode[1],
-      modenum: Number(e.target.id),
+      modenum: extra_mode,
       exenum: movenum,
     }),
   })
     .then((response) => response.json())
     .then((json_data) => {
       // レスポンスの処理
-      console.log(json_data);
       GAMEBOARD = json_data.gameboard;
       PASTBOARD = json_data.gameboard;
       CANDIDATE = json_data.candidate;
       turn = json_data.turn;
+      if (extra_mode) {
+        bs = json_data.bs;
+        ws = json_data.ws;
+      }
       showBoard();
       showCandidate();
       showturn();
@@ -197,11 +206,14 @@ function Autogetter() {
     .then((response) => response.json())
     .then((json_data) => {
       // レスポンスの処理
-      console.log(json_data);
       PASTBOARD = GAMEBOARD;
       GAMEBOARD = json_data.gameboard;
       CANDIDATE = json_data.candidate;
       turn = json_data.turn;
+      if (extra_mode) {
+        bs = json_data.bs;
+        ws = json_data.ws;
+      }
       showturn();
       showBoard();
       showCandidate();
@@ -228,10 +240,14 @@ function clicked() {
   if (CANDIDATE[y][x][turn === 1 ? 0 : 1] < 1) {
     return;
   }
+  if (values[turn === BLACK ? 0 : 1] === 0) {
+    alert("残っている石を選択してください");
+    return;
+  }
   move = {
     x: x,
     y: y,
-    value: value,
+    value: values[turn === BLACK ? 0 : 1],
   };
 
   fetch("/move", {
@@ -244,11 +260,14 @@ function clicked() {
     .then((response) => response.json())
     .then((json_data) => {
       // レスポンスの処理
-      console.log(json_data);
       PASTBOARD = GAMEBOARD;
       GAMEBOARD = json_data.gameboard;
       CANDIDATE = json_data.candidate;
       turn = json_data.turn;
+      if (extra_mode) {
+        bs = json_data.bs;
+        ws = json_data.ws;
+      }
       showturn();
       showBoard();
       showCandidate();
@@ -286,9 +305,14 @@ function showBoard() {
           : GAMEBOARD[i][j] <= WHITE
           ? "white"
           : "";
-
-      if (Boolean(extra_mode)) {
-        disk.innerHTML = GAMEBOARD[i][j] === 0 ? null : GAMEBOARD[i][j];
+      if (extra_mode) {
+        disk.classList.add(
+          Math.abs(GAMEBOARD[i][j]) === 100
+            ? "red"
+            : Math.abs(GAMEBOARD[i][j]) === 50
+            ? "orange"
+            : "blue"
+        );
       }
     }
   }
@@ -309,6 +333,14 @@ function showCandidate() {
 
 function showturn() {
   h2.textContent = turn === BLACK ? "黒のターン" : "白のターン";
+  for (let i = 0; i < vselect.length; i++) {
+    if (turn === WHITE) {
+      vselect[i].classList.add("w");
+    } else {
+      vselect[i].classList.remove("w");
+    }
+  }
+
   numBlack = numWhite = 0;
   for (let i = 0; i < board_size; i++) {
     for (let j = 0; j < board_size; j++) {
@@ -320,6 +352,35 @@ function showturn() {
   }
   document.getElementById("numBlack").textContent = numBlack;
   document.getElementById("numWhite").textContent = numWhite;
+  if (extra_mode) {
+    const spans = document.getElementsByClassName("stock");
+
+    for (let i = 0; i < 3; i++) {
+      if (vselect[i].classList.contains("selected")) {
+        vselect[i].classList.remove("selected");
+      }
+    }
+    let value =
+      values[turn === BLACK ? 0 : 1] == 100
+        ? 0
+        : values[turn === BLACK ? 0 : 1] == 50
+        ? 1
+        : 2;
+    console.log(value);
+    vselect[value].classList.add("selected");
+
+    for (let i = 0; i < 3; i++) {
+      spans[i].textContent = turn === BLACK ? bs[i] : ws[i];
+      vselect[i].classList.remove("disabled");
+      if ((turn === BLACK ? bs[i] : ws[i]) === 0) {
+        if (vselect[i].classList.contains("selected")) {
+          vselect[i].classList.remove("selected");
+          values[turn === BLACK ? 0 : 1] = 0;
+        }
+        vselect[i].classList.add("disabled");
+      }
+    }
+  }
   return;
 }
 

@@ -74,8 +74,8 @@ td.cell {
 }
 
 .disabled {
-    pointer-events: none;
-    opacity: 0.6;
+    pointer-events: none !important;
+    opacity: 0.5;
 }
 
 .hide {
@@ -83,13 +83,13 @@ td.cell {
 }
 
 .black {
-    background: black;
-    border: solid 2px black;
+    background: black !important;
+    border: solid 3px black;
 }
 
 .white {
-    background: white;
-    border: solid 2px black
+    background: white !important;
+    border: solid 3px black
 }
 
 h2 {
@@ -99,7 +99,7 @@ h2 {
 
 #counter {
     margin: 0 auto;
-    width: 350px;
+    width: 380px;
     display: flex;
     line-height: 50px;
     font-weight: bold;
@@ -172,8 +172,8 @@ h3 {
     position: relative;
     font-size: 22px;
     height: 35px;
-    margin: 5px 50px 0 50px;
-    border: solid 1px black;
+    margin: 5px 70px 0 25px;
+    border: solid 1px black !important;
     border-radius: 10px 0px 0px 10px;
     padding: 0.5rem 1.5rem 0.3rem 1.5rem;
     word-break: break-all;
@@ -186,14 +186,13 @@ h3.selected {
 }
 
 h3.w {
-    color: #000;
     background: #fff;
 }
 
 h3:after {
     position: absolute;
     top: -1px;
-    right: -41px;
+    right: -42px;
     width: 0;
     height: 0;
     content: '';
@@ -201,6 +200,18 @@ h3:after {
     border-width: 49px 40px 0 0;
     border-style: solid;
     border-color: #000 transparent transparent transparent;
+}
+
+h3.red::after {
+    border-color: rgb(255, 56, 56)transparent transparent transparent;
+}
+
+h3.orange::after {
+    border-color: rgb(255, 197, 73) transparent transparent transparent;
+}
+
+h3.blue::after {
+    border-color: rgb(73, 161, 255) transparent transparent transparent;
 }
 
 h3:hover {
@@ -214,9 +225,24 @@ h3 span {
     width: 47px;
     position: absolute;
     top: 0;
-    right: -78px;
+    right: -81px;
     display: block;
     padding-top: 4px;
-    padding-right: 10px;
+    padding-right: 5px;
     color: #000000;
+}
+
+.red {
+    border-color: rgb(255, 56, 56);
+    color: rgb(255, 56, 56);
+}
+
+.orange {
+    border-color: rgb(255, 197, 73);
+    color: rgb(255, 197, 73);
+}
+
+.blue {
+    border-color: rgb(73, 161, 255);
+    color: rgb(73, 161, 255);
 }

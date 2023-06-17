@@ -366,7 +366,6 @@ function showturn() {
         : values[turn === BLACK ? 0 : 1] == 50
         ? 1
         : 2;
-    console.log(value);
     vselect[value].classList.add("selected");
 
     for (let i = 0; i < 3; i++) {
@@ -415,6 +414,51 @@ function endingGame() {
   });
 }
 
+function data_load() {
+  fetch("/load", {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: null,
+  })
+    .then((response) => response.json())
+    .then((json_data) => {
+      // レスポンスの処理
+      console.log(json_data);
+      if (json_data.winner === 0) {
+        extra_mode = json_data.mode;
+        selectmode[0] = json_data.blackmode;
+        selectmode[1] = json_data.whitemode;
+        GAMEBOARD = json_data.gameboard;
+        PASTBOARD = json_data.gameboard;
+        CANDIDATE = json_data.candidate;
+        turn = json_data.turn;
+        if (extra_mode) {
+          bs = json_data.bs;
+          ws = json_data.ws; 
+          valuecounter.classList.remove("hide");
+        }
+        mode.classList.add("hide");
+        counter.classList.remove("hide");
+
+        showBoard();
+        showCandidate();
+        showturn();
+        if ((turn === BLACK ? selectmode[0] : selectmode[1]) != 0) {
+          paused = true;
+        }
+        
+      } else {
+        return;
+      }
+    })
+    .catch((error) => {
+      console.error("Error:", error);
+    });
+}
+
 window.onload = () => {
   init();
+  data_load();
 };

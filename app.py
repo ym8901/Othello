@@ -1,5 +1,5 @@
 from flask import Flask
-from backend.views import index_func, move_func, init_func
+from backend.views import index_func, move_func, init_func, load_func
 
 app = Flask(__name__)
 # ルーティングの設定
@@ -15,6 +15,10 @@ def move():
 @app.route('/init',  methods=['POST'])
 def init():
     return init_func()
+
+@app.route('/load', methods=['GET'])
+def load():
+    return load_func()
 
 if __name__ == '__main__':
     app.run(debug=True)

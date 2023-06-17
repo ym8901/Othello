@@ -32,7 +32,6 @@ class GameModel:
                 blackmode INT,
                 whitemode INT,
                 mode INT
-                
             )
         ''')
         self.db.commit()
@@ -68,14 +67,10 @@ class GameModel:
         query = 'UPDATE games SET winner = %s,blackmode = %s,whitemode = %s,mode = %s WHERE id = %s'
         values = (winner, blackmode, whitemode, mode, self.get_gameid())
         self.cursor.execute(query, values)
-
-        dummy_query = 'INSERT INTO games (winner, blackmode, whitemode, mode) VALUES (NULL, NULL, NULL, NULL)'
-        self.cursor.execute(dummy_query)
         self.db.commit()
-        self.dummy_game_id = self.cursor.lastrowid
 
     def save_moves(self):
-        query = 'INSERT INTO moves SELECT * FROM processes'
+        query = 'INSERT INTO moves (game_id, turn, player, score, position) SELECT game_id, turn, player, score, position FROM processes'
         self.cursor.execute(query)
 
         query = 'TRUNCATE table processes'
@@ -83,40 +78,69 @@ class GameModel:
         self.db.commit()
 
     def save_process(self, turn, player, score, position):
-        if(self.get_gameid() == None):
-            # ダミーレコードの挿入
-            dummy_query = 'INSERT INTO games (winner, blackmode, whitemode, mode) VALUES (NULL, NULL, NULL, NULL)'
-            self.cursor.execute(dummy_query)
-            self.db.commit()
-            dummy_game_id = self.cursor.lastrowid  # ダミーレコードのgame_idを取得
+        # Processesテーブルに行を追加
+        query = 'INSERT INTO Processes (game_id, turn, player, score, position) VALUES (%s, %s, %s, %s, %s)'
+        values = (self.get_gameid(), turn, player, score, position)
+        self.cursor.execute(query, values)
+        self.db.commit()
 
-            # Processesテーブルに行を追加
-            query = 'INSERT INTO Processes (game_id, turn, player, score, position) VALUES (%s, %s, %s, %s, %s)'
-            values = (dummy_game_id, turn, player, score, position)
-            self.cursor.execute(query, values)
-            self.db.commit()
-        else:
-            # Processesテーブルに行を追加
-            query = 'INSERT INTO Processes (game_id, turn, player, score, position) VALUES (%s, %s, %s, %s, %s)'
-            values = (self.get_gameid(), turn, player, score, position)
-            self.cursor.execute(query, values)
-            self.db.commit()
+    def save_dummygame(self, blackmode, whitemode, mode):
+        query = 'INSERT INTO games (winner, blackmode, whitemode, mode) VALUES (0, %s, %s, %s)'
+        values = (blackmode, whitemode, mode)
+        self.cursor.execute(query, values)
+        self.db.commit()
 
     def get_gameid(self):
         query = 'SELECT MAX(id) FROM games'
         self.cursor.execute(query)
         game_id = self.cursor.fetchone()[0]
+        result = self.cursor.fetchone()
+        if result is not None:
+            game_winner = result[0]
+        else:
+            game_winner = None
+        self.db.commit()
         return game_id
+
+    def get_gamewinner(self):
+        query = 'SELECT winner FROM games WHERE id = %s'
+        values = (self.get_gameid(),)
+        self.cursor.execute(query, values)
+        result = self.cursor.fetchone()
+        if result is not None:
+            game_winner = result[0]
+        else:
+            game_winner = True
+        self.db.commit()
+        return game_winner
 
     def load_processes(self):
         query = 'SELECT * FROM processes'
         self.cursor.execute(query)
 
-        processes = []
+        player = []
+        score = []
+        position = []
+        processes = {}
         for fetched_line in self.cursor.fetchall():
-            processes.append(
-                [fetched_line["player"], fetched_line["score"], fetched_line["position"]])
+            player.append(fetched_line[3])
+            score.append(fetched_line[4])
+            position.append(fetched_line[5])
 
+        query = 'SELECT * FROM games WHERE id = %s'
+        values = (self.get_gameid(),)
+        self.cursor.execute(query, values)
+
+        for games in self.cursor.fetchall():
+            processes["blackmode"] = games[2]
+            processes["whitemode"] = games[3]
+            processes["mode"] = games[4]
+
+        processes["player"] = player
+        processes["score"] = score
+        processes["position"] = position
+
+        self.db.commit()
         return processes
 
     def close(self):

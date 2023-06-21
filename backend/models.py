@@ -3,7 +3,6 @@ import logging
 
 logging.basicConfig(filename='app.log', level=logging.DEBUG, encoding='utf-8')
 
-
 class GameModel:
     def __init__(self):
         # データベース接続の設定

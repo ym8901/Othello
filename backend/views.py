@@ -1,4 +1,5 @@
 from flask import render_template, request
+from functools import wraps
 import numpy as np
 import json
 import logging
@@ -21,8 +22,9 @@ turn = 0
 whitemode = 0
 blackmode = 0
 modenum = 0
-exenum = 0
 turncount = 0
+
+db = GameModel()
 
 # 方向(２進数)
 LEFT = 2**0  # =1
@@ -54,11 +56,17 @@ def index_func():
     # ホームページの表示
     return render_template('index.html')
 
+def use_database(func):
+    @wraps(func)
+    def wrapper(*args, **kwargs):
+        db.__init__()
+        result = func(*args, **kwargs)
+        db.close()
+        return result
+    return wrapper
 
+@use_database
 def move_func():
-    db = GameModel()
-    db.__init__()
-
     if request.method == 'POST':
         global turn, candidate, turncount
 
@@ -68,7 +76,6 @@ def move_func():
         value = int(data['value'])
 
         db.save_process(turncount, turn, value, y*10+x)
-        db.close()
         if(modenum):
             if(turn == black):
                 blackstone[0 if value == 100 else 1 if value == 50 else 2] -= 1
@@ -85,45 +92,53 @@ def move_func():
 
     elif(request.method == 'GET'):
         if((blackmode if turn == black else whitemode) == 1):
-            randmoves = []
-            color = 0 if turn == black else 1
-            for x in range(BOARD_SIZE):
-                for y in range(BOARD_SIZE):
-                    if(candidate[y][x][color] != 0):
-                        randmoves.append([x, y])
-
-            move = random.choice(randmoves)
-            value = 1
-            if(modenum):
-                randvalue = []
-                if(blackstone[0] if turn == black else whitestone[0]):
-                    randvalue += [100]
-                if(blackstone[1] if turn == black else whitestone[1]):
-                    randvalue += [50]
-                if(blackstone[2] if turn == black else whitestone[2]):
-                    randvalue += [10]
-                value = random.choice(randvalue)
-
-            db.save_process(turncount, turn, value, move[1]*10+move[0])
-            db.close()
-
-            if(turn == black):
-                blackstone[0 if value == 100 else 1 if value == 50 else 2] -= 1
-            else:
-                whitestone[0 if value == 100 else 1 if value == 50 else 2] -= 1
-
-            Reverse_func(move[0], move[1], value)
-            create_candidate()
-            turn = -turn
-            turncount += 1
-
+            random_move()
             data = create_json()
             return json.dumps(data)
 
 
+@use_database
+def random_move():
+    global turn, turncount
+
+    randmoves = []
+    color = 0 if turn == black else 1
+    for x in range(BOARD_SIZE):
+        for y in range(BOARD_SIZE):
+            if(candidate[y][x][color] != 0):
+                randmoves.append([x, y])
+
+    move = random.choice(randmoves)
+    value = 1
+    if(modenum):
+        randvalue = []
+        if((blackstone[0] if turn == black else whitestone[0]) > 0):
+            randvalue += [100]
+        if((blackstone[1] if turn == black else whitestone[1]) > 0):
+            randvalue += [50]
+        if((blackstone[2] if turn == black else whitestone[2]) > 0):
+            randvalue += [10]
+        value = random.choice(randvalue)
+
+    db.save_process(turncount, turn, value, move[1]*10+move[0])
+
+    if(turn == black):
+        blackstone[0 if value == 100 else 1 if value == 50 else 2] -= 1
+    else:
+        whitestone[0 if value == 100 else 1 if value == 50 else 2] -= 1
+
+    Reverse_func(move[0], move[1], value)
+    create_candidate()
+    turn = -turn
+    turncount += 1
+
+
+def AI_move():
+    turn *= -1
+
+
 def create_json():
     global turn
-    global candidate
     data = {}
     if(modenum != 0):
         data["bs"] = blackstone
@@ -145,31 +160,23 @@ def create_json():
     return data
 
 
+@use_database
 def checkmate_func():
     bpoint = wpoint = 0
     if(not(sum([(candidate[x][y][0 if turn == black else 1]) for x in range(BOARD_SIZE) for y in range(BOARD_SIZE)]))):
-        db = GameModel()
-        db.__init__()
-        if((turn == white and not(np.sum(blackstone))) or (turn == black and not(np.sum(whitestone)))):
-            winner = black if bpoint > wpoint else white
-            db.save_game_result(winner, blackmode, whitemode, modenum)
-            db.save_moves()
-            db.close()
-            return True
+        for y in range(BOARD_SIZE):
+            for x in range(BOARD_SIZE):
+                if(np.sign(board[y][x]) == black):
+                    bpoint += board[y][x]
+                else:
+                    wpoint += -board[y][x]
+        winner = black if bpoint > wpoint else white
 
-        if(not(sum([(candidate[x][y][0 if turn == white else 1]) for x in range(BOARD_SIZE) for y in range(BOARD_SIZE)]))):
-            for y in range(BOARD_SIZE):
-                for x in range(BOARD_SIZE):
-                    if(np.sign(board[y][x]) == black):
-                        bpoint += board[y][x]
-                    else:
-                        wpoint += -board[y][x]
-            winner = black if bpoint > wpoint else white
+        if(not(sum([(candidate[x][y][0 if turn == white else 1]) for x in range(BOARD_SIZE) for y in range(BOARD_SIZE)]))) or \
+                ((turn == white and not(np.sum(blackstone))) or (turn == black and not(np.sum(whitestone)))):
             db.save_game_result(winner, blackmode, whitemode, modenum)
             db.save_moves()
-            db.close()
             return True
-        db.close()
     return False
 
 
@@ -238,11 +245,10 @@ def neighborhood_search(x, y, turncolor):
     return 0
 
 
+@use_database
 def load_func():
-    global turn, turncount, board, candidate, modenum,blackmode,whitemode
+    global turn, turncount, board, candidate, modenum, blackmode, whitemode
     if request.method == 'GET':
-        db = GameModel()
-        db.__init__()
         data = {}
         jdata = {}
 
@@ -295,10 +301,10 @@ def load_func():
 
         else:
             jdata["winner"] = True
-            db.close()
         return json.dumps(jdata)
 
 
+@use_database
 def init_func():
     global board, candidate, whitemode, blackmode, exenum, turn, modenum, turncount, blackstone, whitestone
 
@@ -307,30 +313,26 @@ def init_func():
         whitemode = data['white']
         blackmode = data['black']
         modenum = data['modenum']
-        exenum = data['exenum']
         turn = black
         turncount = 1
+        blackstone[0] = whitestone[0] = 10
+        blackstone[1] = whitestone[1] = 4
+        blackstone[2] = whitestone[2] = 4
 
-        db = GameModel()
-        db.__init__()
         db.save_dummygame(blackmode, whitemode, modenum)
-        db.close()
 
         board = np.zeros((BOARD_SIZE, BOARD_SIZE), dtype=int)
         candidate = np.zeros((BOARD_SIZE, BOARD_SIZE, 2), dtype=int)
         if modenum == 0:
             board[2][2] = board[3][3] = white
             board[3][2] = board[2][3] = black
-            create_candidate()
-        else:
-            create_candidate()
-            blackstone[0] = whitestone[0] = 10
-            blackstone[1] = whitestone[1] = 4
-            blackstone[2] = whitestone[2] = 4
-            data["bs"] = blackstone
-            data["ws"] = whitestone
 
+        create_candidate()
+
+        data["bs"] = blackstone
+        data["ws"] = whitestone
         data["gameboard"] = board.tolist()
         data["candidate"] = candidate.tolist()
         data["turn"] = turn
+
         return json.dumps(data)

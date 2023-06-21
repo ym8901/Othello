@@ -117,7 +117,7 @@ function setDisabled() {
   }
 }
 
-async function start(e) {
+function start(e) {
   if (document.getElementById("s1").checked) {
     if (!exenum.value) {
       alert("実行回数が入力されていません");
@@ -139,40 +139,87 @@ async function start(e) {
   if (extra_mode) {
     valuecounter.classList.remove("hide");
   }
-  fetch("/init", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      black: selectmode[0],
-      white: selectmode[1],
-      modenum: extra_mode,
-      exenum: movenum,
-    }),
-  })
-    .then((response) => response.json())
-    .then((json_data) => {
-      // レスポンスの処理
-      GAMEBOARD = json_data.gameboard;
-      PASTBOARD = json_data.gameboard;
-      CANDIDATE = json_data.candidate;
-      turn = json_data.turn;
-      if (extra_mode) {
-        bs = json_data.bs;
-        ws = json_data.ws;
-      }
-      showBoard();
-      showCandidate();
-      showturn();
-
-      if ((turn === BLACK ? selectmode[0] : selectmode[1]) != 0) {
-        setTimeout(Autogetter, speed);
-      }
+  if (movenum == 1) {
+    fetch("/init", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        black: selectmode[0],
+        white: selectmode[1],
+        modenum: extra_mode,
+      }),
     })
-    .catch((error) => {
+      .then((response) => response.json())
+      .then((json_data) => {
+        // レスポンスの処理
+        GAMEBOARD = json_data.gameboard;
+        PASTBOARD = json_data.gameboard;
+        CANDIDATE = json_data.candidate;
+        turn = json_data.turn;
+        if (extra_mode) {
+          bs = json_data.bs;
+          ws = json_data.ws;
+        }
+        showBoard();
+        showCandidate();
+        showturn();
+
+        if ((turn === BLACK ? selectmode[0] : selectmode[1]) != 0) {
+          setTimeout(Autogetter, speed);
+        }
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+      });
+  } else {
+    runSimulation();
+    return;
+  }
+}
+
+async function runSimulation() {
+  for (let i = 0; i < movenum; i++) {
+    try {
+      await fetch("/init", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          black: selectmode[0],
+          white: selectmode[1],
+          modenum: extra_mode,
+        }),
+      });
+      await simulator();
+      // 最後のループの場合のみendingGame()を呼び出す
+      if (i === movenum - 1) {
+        endingGame();
+      }
+    } catch (error) {
       console.error("Error:", error);
+    }
+  }
+}
+
+async function simulator() {
+  let endFlag = false;
+  while (!endFlag) {
+    const response = await fetch("/move", {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: null,
     });
+
+    const json_data = await response.json();
+    if (json_data.checkmate) {
+      endFlag = true;
+    }
+  }
 }
 
 // 初期化
@@ -436,7 +483,7 @@ function data_load() {
         turn = json_data.turn;
         if (extra_mode) {
           bs = json_data.bs;
-          ws = json_data.ws; 
+          ws = json_data.ws;
           valuecounter.classList.remove("hide");
         }
         mode.classList.add("hide");
@@ -448,7 +495,6 @@ function data_load() {
         if ((turn === BLACK ? selectmode[0] : selectmode[1]) != 0) {
           paused = true;
         }
-        
       } else {
         return;
       }

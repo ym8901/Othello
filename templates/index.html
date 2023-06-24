@@ -10,10 +10,18 @@
       rel="stylesheet"
       href="{{url_for('static',filename='css/styles.css')}}"
     />
+    <link
+      rel="stylesheet"
+      href="{{url_for('static',filename='css/ProgressBar.css')}}"
+    />
   </head>
 
   <body>
     <main>
+      <div class="progress hide" id="progress"></div>
+      <div class="hide" id="chart">
+        <canvas  id="myChart"></canvas>
+      </div>
       <div id="mode">
         <h1>Othelo</h1>
         <div id="nextline">
@@ -117,14 +125,22 @@
       </div>
 
       <div id="value3" class="hide">
-        <h3 id="100" class="valueselect selected red"><span class="stock">10</span>100P</h3>
-        <h3 id="50" class="valueselect orange"><span class="stock">4</span>50P</h3>
-        <h3 id="10" class="valueselect blue"><span class="stock">4</span>10P</h3>
+        <h3 id="100" class="valueselect selected red">
+          <span class="stock">10</span>100P
+        </h3>
+        <h3 id="50" class="valueselect orange">
+          <span class="stock">4</span>50P
+        </h3>
+        <h3 id="10" class="valueselect blue">
+          <span class="stock">4</span>10P
+        </h3>
       </div>
     </main>
     <script
       type="text/javascript"
       src="{{url_for('static',filename='js/main.js')}}"
     ></script>
+    <script src="https://rawgit.com/kimmobrunfeldt/progressbar.js/master/dist/progressbar.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   </body>
 </html>

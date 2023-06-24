@@ -25,13 +25,18 @@ const regexs = /[^a-zA-Z]+$/g;
 let values = [1, 1];
 let bs;
 let ws;
+let bar;
+let chart;
 
 const board = document.getElementById("board");
+const contents = document.getElementById("contents");
 const h2 = document.querySelector("h2");
 const counter = document.getElementById("counter");
 const valuecounter = document.getElementById("value3");
 const mode = document.getElementById("mode");
 const exenum = document.getElementById("num");
+const progress = document.getElementById("progress");
+const ctx = document.getElementById("myChart");
 
 document
   .querySelectorAll('[name="b-selector"],[name="w-selector"]')
@@ -133,13 +138,12 @@ function start(e) {
   if (extra_mode) {
     values[0] = values[1] = 100;
   }
-
   mode.classList.add("hide");
-  counter.classList.remove("hide");
-  if (extra_mode) {
-    valuecounter.classList.remove("hide");
-  }
   if (movenum == 1) {
+    counter.classList.remove("hide");
+    if (extra_mode) {
+      valuecounter.classList.remove("hide");
+    }
     fetch("/init", {
       method: "POST",
       headers: {
@@ -174,52 +178,90 @@ function start(e) {
         console.error("Error:", error);
       });
   } else {
+    bar = new ProgressBar.Circle(progress, {
+      color: "#aaa",
+      // This has to be the same size as the maximum width to
+      // prevent clipping
+      strokeWidth: 4,
+      trailWidth: 1,
+      easing: "easeInOut",
+      duration: 1400,
+      text: {
+        autoStyleContainer: false,
+      },
+      from: { color: "#aaa", width: 1 },
+      to: { color: "#333", width: 4 },
+      // Set default step function for all animate calls
+      step: function (state, circle) {
+        circle.path.setAttribute("stroke", state.color);
+        circle.path.setAttribute("stroke-width", state.width);
+
+        var value = Math.round(circle.value() * 100);
+        if (value === 0) {
+          circle.setText("0%");
+        } else {
+          circle.setText(value + "%");
+        }
+      },
+    });
+    bar.text.style.fontFamily = '"Raleway", Helvetica, sans-serif';
+    bar.text.style.fontSize = "2rem";
+    bar.set(0);
+
+    chart = new Chart(ctx, {
+      type: "bar",
+      data: {
+        labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+        datasets: [
+          {
+            label: "# of Votes",
+            data: [12, 19, 3, 5, 2, 3],
+            borderWidth: 1,
+          },
+        ],
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true,
+          },
+        },
+      },
+    });
+
+    contents.classList.add("hide");
+    ctx.parentNode.classList.remove("hide");
     runSimulation();
     return;
   }
 }
 
-async function runSimulation() {
-  for (let i = 0; i < movenum; i++) {
-    try {
-      await fetch("/init", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          black: selectmode[0],
-          white: selectmode[1],
-          modenum: extra_mode,
-        }),
-      });
-      await simulator();
-      // 最後のループの場合のみendingGame()を呼び出す
-      if (i === movenum - 1) {
-        endingGame();
-      }
-    } catch (error) {
-      console.error("Error:", error);
-    }
-  }
+function updateProgress(per) {
+  bar.animate(per);
 }
 
-async function simulator() {
-  let endFlag = false;
-  while (!endFlag) {
-    const response = await fetch("/move", {
-      method: "GET",
+async function runSimulation() {
+  progress.classList.remove("hide");
+  for (let i = 0; i < movenum; i++) {
+    await fetch("/simulate", {
+      method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: null,
-    });
-
-    const json_data = await response.json();
-    if (json_data.checkmate) {
-      endFlag = true;
-    }
+      body: JSON.stringify({
+        selectmode: selectmode,
+        modenum: extra_mode,
+      }),
+    })
+      .then((response) => response.json())
+      .then((json_data) => {
+        updateProgress((i + 1) / movenum);
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+      });
   }
+  endingGame();
 }
 
 // 初期化
@@ -374,6 +416,10 @@ function showCandidate() {
         selectmode[turn === 1 ? 0 : 1] === 0
           ? "Possible"
           : "cell";
+      console.log(
+        CANDIDATE[i][j][turn === 1 ? 0 : 1],
+        selectmode[turn === 1 ? 0 : 1]
+      );
     }
   }
 }
@@ -407,14 +453,15 @@ function showturn() {
         vselect[i].classList.remove("selected");
       }
     }
-    let value =
-      values[turn === BLACK ? 0 : 1] == 100
-        ? 0
-        : values[turn === BLACK ? 0 : 1] == 50
-        ? 1
-        : 2;
-    vselect[value].classList.add("selected");
-
+    if (values[turn === BLACK ? 0 : 1] > 0) {
+      let value =
+        values[turn === BLACK ? 0 : 1] == 100
+          ? 0
+          : values[turn === BLACK ? 0 : 1] == 50
+          ? 1
+          : 2;
+      vselect[value].classList.add("selected");
+    }
     for (let i = 0; i < 3; i++) {
       spans[i].textContent = turn === BLACK ? bs[i] : ws[i];
       vselect[i].classList.remove("disabled");
@@ -446,7 +493,9 @@ function endingGame() {
     numBlack > numWhite
       ? "黒の勝ち!"
       : numWhite > numBlack
-      ? "白の勝ち"
+      ? "白の勝ち!"
+      : movenum > 1
+      ? "完了!"
       : "引き分け!";
   showAnime();
   const restartBtn = document.getElementById("restartBtn");
@@ -472,11 +521,9 @@ function data_load() {
     .then((response) => response.json())
     .then((json_data) => {
       // レスポンスの処理
-      console.log(json_data);
       if (json_data.winner === 0) {
         extra_mode = json_data.mode;
-        selectmode[0] = json_data.blackmode;
-        selectmode[1] = json_data.whitemode;
+        selectmode = json_data.selectmode;
         GAMEBOARD = json_data.gameboard;
         PASTBOARD = json_data.gameboard;
         CANDIDATE = json_data.candidate;
@@ -488,10 +535,16 @@ function data_load() {
         }
         mode.classList.add("hide");
         counter.classList.remove("hide");
-
+        console.log(CANDIDATE);
         showBoard();
         showCandidate();
         showturn();
+        for (let i = 0; i < 3; i++) {
+          if (vselect[i].classList.contains("selected")) {
+            vselect[i].classList.remove("selected");
+          }
+        }
+        values = [0, 0];
         if ((turn === BLACK ? selectmode[0] : selectmode[1]) != 0) {
           paused = true;
         }

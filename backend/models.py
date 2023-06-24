@@ -78,6 +78,8 @@ class GameModel:
 
     def save_process(self, turn, player, score, position):
         # Processesテーブルに行を追加
+        if(not(player)):
+            return
         query = 'INSERT INTO Processes (game_id, turn, player, score, position) VALUES (%s, %s, %s, %s, %s)'
         values = (self.get_gameid(), turn, player, score, position)
         self.cursor.execute(query, values)
@@ -131,8 +133,7 @@ class GameModel:
         self.cursor.execute(query, values)
 
         for games in self.cursor.fetchall():
-            processes["blackmode"] = games[2]
-            processes["whitemode"] = games[3]
+            processes["selectmode"] = [games[2],games[3]]
             processes["mode"] = games[4]
 
         processes["player"] = player

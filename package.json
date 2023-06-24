@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "chart.js": "^4.3.0",
+    "progressbar.js": "^1.1.0"
+  }
+}

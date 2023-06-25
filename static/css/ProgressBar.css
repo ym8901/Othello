@@ -1,6 +1,15 @@
 #progress {
     margin: 20px;
-    width: 200px;
-    height: 200px;
+    width: 100px;
+    height: 100px;
     position: relative;
+    text-align: center;
+}
+
+#chart {
+    margin: 20px;
+    width: 600px;
+    height: auto;
+    position: relative;
+    background: rgb(138 208 157 / 48%);
 }

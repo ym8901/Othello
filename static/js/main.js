@@ -37,6 +37,7 @@ const mode = document.getElementById("mode");
 const exenum = document.getElementById("num");
 const progress = document.getElementById("progress");
 const ctx = document.getElementById("myChart");
+const restartBtn = document.getElementById("restartBtn");
 
 document
   .querySelectorAll('[name="b-selector"],[name="w-selector"]')
@@ -75,13 +76,13 @@ document.addEventListener("keydown", (event) => {
       setTimeout(Autogetter, speed * 3);
     }
   } else if (event.code === "ArrowDown") {
-    if (speed >= 210) {
+    if (speed >= 110) {
       speed -= 10;
       h2.textContent = speed;
       showAnime();
     }
   } else if (event.code === "ArrowUp") {
-    if (speed <= 790) {
+    if (speed <= 890) {
       speed += 10;
       h2.textContent = speed;
       showAnime();
@@ -208,27 +209,7 @@ function start(e) {
     bar.text.style.fontSize = "2rem";
     bar.set(0);
 
-    chart = new Chart(ctx, {
-      type: "bar",
-      data: {
-        labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
-        datasets: [
-          {
-            label: "# of Votes",
-            data: [12, 19, 3, 5, 2, 3],
-            borderWidth: 1,
-          },
-        ],
-      },
-      options: {
-        scales: {
-          y: {
-            beginAtZero: true,
-          },
-        },
-      },
-    });
-
+    chart = create_chart(ctx);
     contents.classList.add("hide");
     ctx.parentNode.classList.remove("hide");
     runSimulation();
@@ -242,6 +223,7 @@ function updateProgress(per) {
 
 async function runSimulation() {
   progress.classList.remove("hide");
+  let result_log = [0, 0, 0];
   for (let i = 0; i < movenum; i++) {
     await fetch("/simulate", {
       method: "POST",
@@ -256,11 +238,21 @@ async function runSimulation() {
       .then((response) => response.json())
       .then((json_data) => {
         updateProgress((i + 1) / movenum);
+        console.log(json_data.winner);
+        if (json_data.winner == BLACK) {
+          result_log[0]++;
+        } else if (json_data.winner == WHITE) {
+          result_log[1]++;
+        } else {
+          result_log[2]++;
+        }
+        update_chart(chart,i+1,result_log)
       })
       .catch((error) => {
         console.error("Error:", error);
       });
   }
+  restartBtn.style.transform = "translate(-50%, 500%)";
   endingGame();
 }
 
@@ -307,7 +299,7 @@ function Autogetter() {
       showBoard();
       showCandidate();
       if (json_data.checkmate) {
-        endingGame();
+        endingGame(json_data.checkmate);
         return;
       }
       if (json_data.skipped) {
@@ -361,7 +353,7 @@ function clicked() {
       showBoard();
       showCandidate();
       if (json_data.checkmate) {
-        endingGame();
+        endingGame(json_data.checkmate);
         return;
       }
       if (json_data.skipped) {
@@ -488,7 +480,7 @@ function showAnime() {
   h2.animate({ opacity: [0, 1] }, { duration: speed, iterations: 3 });
 }
 
-function endingGame() {
+function endingGame(result) {
   h2.textContent =
     numBlack > numWhite
       ? "黒の勝ち!"
@@ -498,7 +490,6 @@ function endingGame() {
       ? "完了!"
       : "引き分け!";
   showAnime();
-  const restartBtn = document.getElementById("restartBtn");
   restartBtn.classList.remove("hide");
   restartBtn.animate(
     { opacity: [1, 0.5, 1] },
@@ -528,10 +519,12 @@ function data_load() {
         PASTBOARD = json_data.gameboard;
         CANDIDATE = json_data.candidate;
         turn = json_data.turn;
+        values = [1, 1];
         if (extra_mode) {
           bs = json_data.bs;
           ws = json_data.ws;
           valuecounter.classList.remove("hide");
+          values = [0, 0];
         }
         mode.classList.add("hide");
         counter.classList.remove("hide");
@@ -544,7 +537,7 @@ function data_load() {
             vselect[i].classList.remove("selected");
           }
         }
-        values = [0, 0];
+
         if ((turn === BLACK ? selectmode[0] : selectmode[1]) != 0) {
           paused = true;
         }

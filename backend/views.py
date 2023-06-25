@@ -151,47 +151,45 @@ def create_json():
         data["ws"] = whitestone
     data["gameboard"] = board.tolist()
     data["candidate"] = candidate.tolist()
-    data["checkmate"] = False
+    data["checkmate"] = 0
     color = 0 if turn == black else 1
     if(sum([(candidate[x][y][color]) for x in range(BOARD_SIZE) for y in range(BOARD_SIZE)])):
         if(not(modenum) or (np.sum(blackstone) if turn == black else np.sum(whitestone))):
             data["turn"] = turn
             data["skipped"] = False
     else:
-        if (checkmate_func()):
-            data['checkmate'] = True
+        result = checkmate_func()
+        if (result != 0):
+            data["checkmate"] = result
         turn = -turn
         data["turn"] = turn
-        data['skipped'] = True
+        data["skipped"] = True
     return data
 
 
 @use_database
 def checkmate_func():
-    bpoint = wpoint = 0
-    if(not(sum([(candidate[x][y][0 if turn == black else 1]) for x in range(BOARD_SIZE) for y in range(BOARD_SIZE)]))):
+    bpoint = wpoint = winner = 0
+    # 現ターンのプレイヤーの置ける場所がなく、もう一方も置ける場所がないか石がない場合
+    if(not(sum([(candidate[x][y][0 if turn == black else 1]) for x in range(BOARD_SIZE) for y in range(BOARD_SIZE)]))) and ((not(sum([(candidate[x][y][0 if turn == white else 1]) for x in range(BOARD_SIZE) for y in range(BOARD_SIZE)]))) or
+                                                                                                                            ((turn == white and not(np.sum(blackstone))) or (turn == black and not(np.sum(whitestone))))):
         for y in range(BOARD_SIZE):
             for x in range(BOARD_SIZE):
                 if(np.sign(board[y][x]) == black):
                     bpoint += board[y][x]
                 else:
                     wpoint += -board[y][x]
-        winner = black if bpoint > wpoint else white
+        winner = black if bpoint > wpoint else white if bpoint < wpoint else 2
+        db.save_game_result(winner, selectmode[0], selectmode[1], modenum)
+        db.save_moves()
 
-        if(not(sum([(candidate[x][y][0 if turn == white else 1]) for x in range(BOARD_SIZE) for y in range(BOARD_SIZE)]))) or \
-                ((turn == white and not(np.sum(blackstone))) or (turn == black and not(np.sum(whitestone)))):
-            db.save_game_result(winner, selectmode[0], selectmode[1], modenum)
-            db.save_moves()
-            return True
-    return False
+    return winner
 
 
 def Reverse_func(x, y, value):
     global turn, turncount, modenum, board, candidate
 
     board[y][x] = value * turn
-    logging.debug(value)
-    logging.debug(turn)
     if(modenum != 0 and turncount < 5):
         return
     for i in range(len(direction)):
@@ -295,7 +293,7 @@ def load_func():
                 create_candidate()
 
             turn = -turn
-            
+
             if(modenum != 0):
                 jdata["bs"] = blackstone
                 jdata["ws"] = whitestone
@@ -326,7 +324,7 @@ def simulate_func():
         if(data['checkmate']):
             break
 
-    winner = turn
+    winner = data["checkmate"]
 
     return jsonify({'winner': winner})
 
